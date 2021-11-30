@@ -3,12 +3,12 @@ package it.univpm.Esame.Service;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Vector;
 
-import org.apache.catalina.authenticator.SavedRequest;
+
+
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.json.JSONString;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;

@@ -2,7 +2,7 @@ package it.univpm.Esame.Controller;
 
 import java.io.IOException;
 
-import org.json.simple.parser.ParseException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +15,8 @@ import it.univpm.Esame.Database.Database;
 import it.univpm.Esame.Filters.Filters;
 import it.univpm.Esame.Model.Lavoro;
 import it.univpm.Esame.Service.JsonParser;
-import it.univpm.OpenWeather.exception.InvalidBodyException;
-import it.univpm.OpenWeather.model.RequestBodyClass;
+
+
 
 
 
