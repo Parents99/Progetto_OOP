@@ -18,8 +18,7 @@ import it.univpm.Esame.Service.JsonParser;
 
 
 
-//ensomma
-//ciao fly
+
 
 
 @RestController
@@ -37,8 +36,8 @@ public class Controller {
 	}
 	
 	@PostMapping(value="/filters")
-	public ResponseEntity<Object> ShowFilters(@RequestBody RequestBody body){
-		return new ResponseEntity<>(filters.ShowFilters(body),HttpStatus.OK);
+	public ResponseEntity<Object> ShowFilters(@RequestBody it.univpm.Esame.Model.RequestBody body) throws IOException{
+		return new ResponseEntity<>(filters.Filter(body),HttpStatus.OK);
 	}
 	
 	//ciao flower
