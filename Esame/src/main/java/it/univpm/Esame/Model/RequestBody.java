@@ -5,7 +5,7 @@ package it.univpm.Esame.Model;
 
 public class RequestBody {
 	private String location;  //filtro su città
-	private Boolean remoto = false;  //filtro su lavori in remoto
+	private Boolean remoto;  //filtro su lavori in remoto
 	private String orario;	//filtro per part-time full-time
 	private String ruolo; //filtro sui ruoli
 	
