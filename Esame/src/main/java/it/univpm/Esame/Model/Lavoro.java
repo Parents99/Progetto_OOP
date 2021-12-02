@@ -1,5 +1,11 @@
 package it.univpm.Esame.Model;
 
+import java.util.ArrayList;
+
+
+
+import org.json.JSONArray;
+
 public class Lavoro {
 	private int id;
 	private String ruolo;
@@ -7,7 +13,7 @@ public class Lavoro {
 	private String luogo;
 	private boolean remoto;
 	private String orario;   //part-time o full-time o a contratto
-	private String keyword;
+	private ArrayList<String> keyword;
 	private String data; 
 	
 	public Lavoro() {
@@ -18,7 +24,7 @@ public class Lavoro {
 		this.remoto=false;
 		this.data=null;
 		this.orario=null;
-		this.keyword=null;
+		this.keyword=new ArrayList<String>();
 	}
 	
 	
@@ -80,13 +86,15 @@ public class Lavoro {
 		this.orario = orario;
 	}
 	
-	public String getKeyword() {
-		return keyword;
+	public ArrayList<String> getKeyword() {
+		return this.keyword;
 	}
 	
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
+	public void setKeyword(JSONArray jsonArray) {
+		for(int i=0;i<jsonArray.length();i++) {
+			String tmpString=(String)jsonArray.getString(i);
+			this.keyword.add(tmpString);
+		}
 	}
-	
 	
 }
