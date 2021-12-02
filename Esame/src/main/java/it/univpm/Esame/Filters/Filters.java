@@ -24,14 +24,7 @@ public class Filters {
 		BodyException e = new BodyException();
 		JsonParser downloader = new JsonParser();
 		ArrayList<Lavoro> annunci = downloader.Parsing();
-		
-		
-		//fare filtro location per singola città come metodo e richiamarlo in base a locations.length
-		//otteniamo due liste diverse e le metti insieme
-		
-		
-		
-		
+
 		// filtro location
 		if (body.getLocation() != null) {
 			if(body.getLocation().contains(" ")) { // caso più città nel filtro
@@ -62,10 +55,7 @@ public class Filters {
 						}
 					}
 		}
-		
-		
-		//filtro location
-		
+				
 		//filtro orario full-time part-time contratto
 		if (body.getOrario()!=null) {
 			if(body.getOrario() != ""){	
@@ -76,7 +66,6 @@ public class Filters {
 						}
 			}
 		}
-		
 		
 		//filtro ruolo
 		if (body.getRuolo()!=null) {
@@ -102,7 +91,6 @@ public class Filters {
 					}
 			} 
 		
-		
 			if(body.getRemoto() != true) {
 				for(int i=0;i<annunci.size();i++)
 					if(body.getRemoto() != annunci.get(i).isRemoto()) {
@@ -112,13 +100,11 @@ public class Filters {
 			}
 		}
 		
-		
 		if(annunci.size()==0)
 			e.BodyResults("Nessun risultato trovato");
 		
 		return annunci;
 			
 	} // fine metodo
-	
-	
+
 }
