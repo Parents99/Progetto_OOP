@@ -14,7 +14,7 @@ import javax.net.ssl.HttpsURLConnection;
 import org.json.*;
 import org.springframework.http.HttpEntity;
 
-import it.univpm.Esame.Service.JsonParser;
+
 
 //'Authorization: Token 595f621a2851ad012fa8909a1fb1c9dee278cfaa'
 public class Database {

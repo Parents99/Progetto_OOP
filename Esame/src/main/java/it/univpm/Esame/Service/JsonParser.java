@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-
+import org.springframework.boot.autoconfigure.amqp.RabbitProperties.Template;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -19,7 +19,7 @@ import it.univpm.Esame.Model.Lavoro;
 @Service
 public class JsonParser {
 	
-	public static ArrayList<Lavoro> Parsing() throws IOException{
+	public  ArrayList<Lavoro> Parsing() throws IOException{
 	
 		JSONObject parser=Database.JSONDownloader();
 		JSONArray data= parser.getJSONArray("results");
@@ -37,7 +37,7 @@ public class JsonParser {
 			annuncio.setLuogo(tmp.get("location").toString());
 			annuncio.setOrario(tmp.get("employment_type").toString());
 			annuncio.setRuolo(tmp.getString("role"));
-			annuncio.setKeyword(tmp.get("keywords").toString());
+			annuncio.setKeyword(tmp.getJSONArray("keywords"));
 			annuncio.setData(tmp.getString("date_posted"));
 			annunci.add(annuncio);
 			 
