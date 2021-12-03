@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import it.univpm.Esame.Database.Database;
+
 import it.univpm.Esame.Filters.Filters;
-import it.univpm.Esame.Model.Lavoro;
 import it.univpm.Esame.Model.TipsClass;
 import it.univpm.Esame.Service.JsonParser;
+import it.univpm.Esame.Statistics.Statistics;
 
 
 
@@ -31,7 +31,8 @@ public class Controller {
 	Filters filters;
 	@Autowired
 	TipsClass tips;
-	
+	@Autowired
+	Statistics stat;
 	
 	@GetMapping(value ="/annunci")
 	public ResponseEntity<Object> ShowJobs() throws IOException{
@@ -46,6 +47,11 @@ public class Controller {
 	@PostMapping(value="/filters")
 	public ResponseEntity<Object> ShowFilters(@RequestBody it.univpm.Esame.Model.RequestBody body) throws IOException{
 		return new ResponseEntity<>(filters.Filter(body),HttpStatus.OK);
+	}
+	
+	@PostMapping(value="/statistics")
+	public ResponseEntity<Object> ShowStatistics(@RequestBody it.univpm.Esame.Model.RequestBody body) throws IOException{
+		return new ResponseEntity<>(stat.Statistic(body),HttpStatus.OK);
 	}
 	
 }

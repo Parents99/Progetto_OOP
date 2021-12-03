@@ -1,12 +1,10 @@
 package it.univpm.Esame.Filters;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
-import org.springframework.boot.autoconfigure.amqp.RabbitProperties.Template;
+
 import org.springframework.stereotype.Service;
 
 import it.univpm.Esame.Exception.BodyException;
@@ -18,7 +16,6 @@ import it.univpm.Esame.Service.JsonParser;
 @Service
 public class Filters {
 	
-	@SuppressWarnings("static-access") //per downloader.parsing()
 	
 	public ArrayList<Lavoro> Filter(RequestBody body) throws IOException {
 		BodyException e = new BodyException();
