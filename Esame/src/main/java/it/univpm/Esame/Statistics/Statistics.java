@@ -29,7 +29,7 @@ public class Statistics {
 				if(annunci.get(i).getOrario().equalsIgnoreCase("full time"))
 					risultati.setNumFulltime(); //metodi set che incrementano solamente
 				if(annunci.get(i).getOrario().equalsIgnoreCase("part time"))
-					risultati.setNumPartime(); 
+					risultati.setNumPartime();  
 				tmp.addAll(annunci.get(i).getKeyword()); //concateno tutti i keyword di ogni annuncio in un unico arraylist
 			}
 				
@@ -40,7 +40,13 @@ public class Statistics {
 		tmp.addAll(set);  //e ci rimetto l'hashset privo di duplicati
 		
 		//calcolo percentuale full time
-		String top=(risultati.getNumFulltime()/risultati.getNumTot())*100+"%";
+		int full=0;
+		int totale=risultati.getNumTot();
+		double percentuale=(full/totale)*100;
+		
+		
+		
+		String top= percentuale + "%";
 		risultati.setFulltimePerc(top);
 		
 		//calcolo percentuale part time
