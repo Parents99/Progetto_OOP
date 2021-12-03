@@ -2,6 +2,8 @@ package it.univpm.Esame.Statistics;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import it.univpm.Esame.Model.Lavoro;
 import it.univpm.Esame.Model.RequestBody;
@@ -14,22 +16,31 @@ public class Statistics {
 		JsonParser download = new JsonParser();
 		ArrayList<Lavoro> annunci = download.Parsing();
 		risultati.setNumTot(annunci.size());
+		ArrayList<String> tmp = new ArrayList<String>();
 		
-		
-		for(int i=0;i<annunci.size();i++) {
+		for(int i=0;i<annunci.size();i++) { //manca i top 5 dei lavori richiesti
 			if(body.getLocation().contains(annunci.get(i).getLuogo())){
 				if(annunci.get(i).getOrario().equalsIgnoreCase("full time"))
 					risultati.setNumFulltime(); //metodi set che incrementano solamente
 				if(annunci.get(i).getOrario().equalsIgnoreCase("part time"))
 					risultati.setNumPartime(); 
-				annunci.get(i).getKeyword()
+				tmp.addAll(annunci.get(i).getKeyword()); //concateno tutti i keyword di ogni annuncio
 			}
 				
 		}
+		Set<String> set = new HashSet<String>(tmp);  //lo metto dentro un hashSet che non consente i duplicati
+		tmp.clear();  //cancello gli elementi dell'arraylist
+		tmp.addAll(set);  //e ci rimetto l'hashset privo di duplicati
 		
+		//calcolo percentuale full time
+		String top=(risultati.getNumFulltime()/risultati.getNumTot())*100+"%";
+		risultati.setFulltimePerc(top);
 		
+		//calcolo percentuale part time
+		top=(risultati.getNumPartime()/risultati.getNumTot())*100+"%";
+		risultati.setPartimePerc(top);
 		
-		
+		risultati.setLan(tmp);
 		
 		return risultati;
 	}

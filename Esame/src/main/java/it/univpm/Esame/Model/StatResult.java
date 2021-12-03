@@ -1,12 +1,14 @@
 package it.univpm.Esame.Model;
 
+import java.util.ArrayList;
+
 public class StatResult {
 	private int numTot; //numero totale di annunci
 	private String fulltimePerc; //percentuale di lavori full time 
 	private int numFulltime; //numero di lavori part time
 	private String partimePerc; //percentuale di lavori
 	private int numPartime;  //numero di lavori part time
-	private String lan;	 //linguaggi richiesti insieme al javascript
+	private ArrayList<String> lan;	 //linguaggi richiesti insieme al javascript
 	private String bestJob;  // ruoli più richiesti
 	
 	public StatResult() {
@@ -15,7 +17,7 @@ public class StatResult {
 		this.numFulltime=0;
 		this.partimePerc="";
 		this.numPartime=0;
-		this.lan="";
+		this.lan=new ArrayList<String>();
 		this.bestJob="";
 	} 
 	
@@ -28,12 +30,12 @@ public class StatResult {
 		return this.numTot;
 	}
 	
-	public String getLan() {
+	public ArrayList<String> getLan() {
 		return this.lan;
 	}
 	
-	public void setLan(String lan) {
-		this.lan = lan;
+	public void setLan(ArrayList<String> lan) {
+		this.lan.addAll(lan);
 	}
 	
 	public String getBestJob() {
