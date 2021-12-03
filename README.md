@@ -35,16 +35,61 @@ I parametri che dovranno essere passati sono:
 Fornisce all'utente tutti gli annunci di lavoro contenenti la parola Javascript.
 
 <br><b>Esempio: </b> di seguito vengono riportati alcuni di tutti gli annunci generati</br>
-<b>Chiamata</b>
+
+
+<b>-Chiamata :</b>                   
 
 ![getAnnunci](https://user-images.githubusercontent.com/67264863/144684584-120734f6-8c60-4798-a9a6-a7b30f4a2366.png)
 
-<b>Risposta</b>
+<b>-Risposta :</b>
 
 ![a4](https://user-images.githubusercontent.com/67264863/144684596-746a003e-99e8-4f43-8caf-c9bec6571192.png)
 ![a1](https://user-images.githubusercontent.com/67264863/144684597-ad22b6f2-6512-4e15-b148-99894a199f43.png)
-![a2](https://user-images.githubusercontent.com/67264863/144684598-bb73d940-9393-4dba-b0c7-84cc7758af8f.png)
 ![a3](https://user-images.githubusercontent.com/67264863/144684600-156cbca0-a4f0-4a10-8606-0a149b49c80e.png)
+
+<h3>2.</h3>
+<table>
+  <tr><td>Tipo</td><td>Path</td></tr>
+  <tr><td>GET</td><td>localhost:8080/tips</td></tr>
+</table>
+
+Fornisce all'utente ii nome di cinque città americane su cui poter fare successivamente le ricerche.
+
+<br><b>Esempio: </b></br>
+
+
+<b>-Chiamata :</b>    
+
+![getTips](https://user-images.githubusercontent.com/67264863/144685218-82205472-8130-4134-b53b-db166d3dbc31.png)
+
+<b>-Risposta :</b>
+
+![t1](https://user-images.githubusercontent.com/67264863/144685206-e7b5a841-18cd-4c72-bfaa-1956392f8f35.png)
+
+<h3>3.</h3>
+<table>
+  <tr><td>Tipo</td><td>Path</td></tr>
+  <tr><td>POST</td><td>localhost:8080/filters</td></tr>
+</table>
+
+Fornisce all'utente gli annunci di lavoro filtrati per i vari parametri dall'utente.
+<br>I parametri da inserire nel <b>Body</b> sono: "luogo", "remoto", "orario" e "ruolo".</br>
+<br>Se non si vuole filtrare un parametro basta scrivere "parametro" = "".</br>
+
+<br><b>Esempio: </b></br>
+
+<b>-Chiamata :</b>
+
+![getFilt](https://user-images.githubusercontent.com/67264863/144686568-00985ea3-bd53-4dd2-be9c-75ef45eefc29.png)
+
+<b>-Body :</b>
+
+![f1](https://user-images.githubusercontent.com/67264863/144686026-6b4bdac8-5b76-48a3-9a2c-743a8b704333.png)
+
+<b>-Risposta :</b>
+
+![f2](https://user-images.githubusercontent.com/67264863/144686065-be956894-0647-4ee4-85f7-c0f79b751cc3.png)
+![f3](https://user-images.githubusercontent.com/67264863/144686067-b9c5c992-b66b-4671-84b6-164dbb420111.png)
 
 </p>
 
