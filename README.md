@@ -74,7 +74,7 @@ Fornisce all'utente ii nome di cinque città americane su cui poter fare success
 
 Fornisce all'utente gli annunci di lavoro filtrati per i vari parametri dall'utente.
 <br>I parametri da inserire nel <b>Body</b> sono: "luogo", "remoto", "orario" e "ruolo".</br>
-<br>Se non si vuole filtrare un parametro basta scrivere "parametro" = "".</br>
+<br>E' possibile inserire anche solo un parametro per filtrare gli annunci.</br>
 
 <br><b>Esempio: </b></br>
 
