@@ -117,11 +117,13 @@ Fornisce all'utente gli annunci di lavoro filtrati per i vari parametri dall'ute
 
 ![sequenzaStatistics](https://user-images.githubusercontent.com/67264863/144681858-76b0bf77-8bdd-4b3f-adf6-c6fb2cdc93d8.png)
 
+![sequenzaCittà](https://user-images.githubusercontent.com/67264863/144707412-a8d57b55-3bbd-44ed-af90-07f11138b27b.png)
+
 # Autori
 
 <table>
 <tr><td>Nome e Cognome</td><td>Contributo</td><td>Email</td></tr>
 <tr><td>Fiore Garzarella</td><td>50%</td><td><a href="S1089186@studenti.univpm.it">S1089186@studenti.univpm.it</a></td></tr>
-<tr><td>Christian Parente</td><td>50%</td><td><a href="S1089030@studenti.univpm.it">S1089030@studenti.univpm.it</a></td></tr>
+<tr><td>Christian Parente</td><td>50%</td><td><a href="S1089031@studenti.univpm.it">S1089031@studenti.univpm.it</a></td></tr>
 </table>
 
