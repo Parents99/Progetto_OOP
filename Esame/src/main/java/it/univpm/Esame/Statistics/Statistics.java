@@ -71,7 +71,8 @@ public class Statistics {
 		
 			double percentuale3 = (risultati.getNumContract()/ (double) risultati.getNumTotLocation())*100;
 			risultati.setContractPerc(String.format("%.01f", percentuale3)+"%");
-	
+			
+			
 			risultati.setLan(tmp);
 		
 		

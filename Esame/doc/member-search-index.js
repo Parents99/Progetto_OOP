@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"it.univpm.Esame.Filters","c":"Filters","l":"Filter(RequestBody)","url":"Filter(it.univpm.Esame.Model.RequestBody)"},{"p":"it.univpm.Esame.Filters","c":"Filters","l":"Filters()","url":"%3Cinit%3E()"}]
