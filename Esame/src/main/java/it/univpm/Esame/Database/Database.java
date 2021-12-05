@@ -5,21 +5,17 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
 import javax.annotation.processing.FilerException;
-import javax.net.ssl.HttpsURLConnection;
+
 
 import org.json.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
-import ch.qos.logback.core.property.FileExistsPropertyDefiner;
+
 
 
 
