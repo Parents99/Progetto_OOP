@@ -8,7 +8,10 @@ public class BodyClass {
 	private Boolean remoto;  //filtro su lavori in remoto
 	private String orario;	//filtro per part-time full-time
 	private String ruolo; //filtro sui ruoli
+	private String data;  //per filtrare su data
 	
+	
+
 	public BodyClass(String location, Boolean remoto, String orario, String ruolo) {
 		super();
 		this.location = location;
@@ -17,6 +20,15 @@ public class BodyClass {
 		this.ruolo = ruolo;
 	}
 
+	
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+	
 	public String getLocation() {
 		return location;
 	}
