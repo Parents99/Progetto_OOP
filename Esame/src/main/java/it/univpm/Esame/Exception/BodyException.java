@@ -3,7 +3,7 @@ package it.univpm.Esame.Exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
-@SuppressWarnings("serial")
+@SuppressWarnings("serial") //perchè non viene inserito un serialID
 public class BodyException extends Exception{
 	//eccezione 
 	

@@ -3,38 +3,38 @@ package it.univpm.Esame.Model;
 import java.util.ArrayList;
 
 public class StatResult {
-	private int numTot; //numero totale di annunci
+	private int numTotale; //numero totale di annunci
 	private int numTotLocation; //numero totale di annunci in una località
-	private String fulltimePerc; //percentuale di lavori full time 
+	private String fulltimePercentuale; //percentuale di lavori full time 
 	private int numFulltime; //numero di lavori part time
-	private String partimePerc; //percentuale di lavori
+	private String partimePercentuale; //percentuale di lavori
 	private int numPartime;  //numero di lavori part time
-	private String contractPerc; //percentuale di lavori a contratto
+	private String contractPercentuale; //percentuale di lavori a contratto
 	private int numContract;
-	private ArrayList<String> lan;	 //linguaggi richiesti insieme al javascript
+	private ArrayList<String> linguaggi;	 //linguaggi richiesti insieme al javascript
 	private String bestJob;  // ruoli più richiesti
 	
 	public StatResult() {
-		this.numTot=0;
+		this.numTotale=0;
 		this.numTotLocation=0;
-		this.fulltimePerc="";
+		this.fulltimePercentuale="";
 		this.numFulltime=0;
-		this.partimePerc="";
+		this.partimePercentuale="";
 		this.numPartime=0;
-		this.contractPerc="";
+		this.contractPercentuale="";
 		this.numContract = 0;
-		this.lan=new ArrayList<String>();
+		this.linguaggi=new ArrayList<String>();
 		this.bestJob="";
 	} 
 	
 	
 	public String getContractPerc() {
-		return contractPerc;
+		return contractPercentuale;
 	}
 
 
-	public void setContractPerc(String contractPerc) {
-		this.contractPerc = contractPerc;
+	public void setContractPerc(String contractPercentuale) {
+		this.contractPercentuale = contractPercentuale;
 	}
 
 
@@ -58,20 +58,20 @@ public class StatResult {
 	}
 
 
-	public void setNumTot(int numTot) {
-		this.numTot = numTot;
+	public void setNumTot(int numTotale) {
+		this.numTotale = numTotale;
 	}
 		
 	public int getNumTot() {
-		return this.numTot;
+		return this.numTotale;
 	}
 	
 	public ArrayList<String> getLan() {
-		return this.lan;
+		return this.linguaggi;
 	}
 	
-	public void setLan(ArrayList<String> lan) {
-		this.lan.addAll(lan);
+	public void setLan(ArrayList<String> linguaggi) {
+		this.linguaggi.addAll(linguaggi);
 	}
 	
 	public String getBestJob() {
@@ -83,11 +83,11 @@ public class StatResult {
 	}
 	
 	public String getFulltimePerc() {
-		return this.fulltimePerc;
+		return this.fulltimePercentuale;
 	}
 	
-	public void setFulltimePerc(String fulltimePerc) {
-		this.fulltimePerc = fulltimePerc;
+	public void setFulltimePerc(String fulltimePercentuale) {
+		this.fulltimePercentuale = fulltimePercentuale;
 	}
 	
 	public int getNumFulltime() {
@@ -99,11 +99,11 @@ public class StatResult {
 	}
 	
 	public String getPartimePerc() {
-		return this.partimePerc;
+		return this.partimePercentuale;
 	}
 	
-	public void setPartimePerc(String partimePerc) {
-		this.partimePerc = partimePerc;
+	public void setPartimePerc(String partimePercentuale) {
+		this.partimePercentuale = partimePercentuale;
 	}
 	
 	public int getNumPartime() {
