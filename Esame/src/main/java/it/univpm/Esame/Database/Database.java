@@ -21,7 +21,7 @@ public class Database {
 	public static JSONObject JSONDownloader() throws IOException  {
 		
 		//String url = "https://findwork.dev/api/jobs/ --silent --header 'Authorization: Token 595f621a2851ad012fa8909a1fb1c9dee278cfaa'";
-		String apikey="595f621a2851ad012fa8909a1fb1c9dee278cfaa";
+		//String apikey="595f621a2851ad012fa8909a1fb1c9dee278cfaa";
 		//String urlString="https://findwork.dev/api/jobs/?search=javascript";
 		
 		String url = "https://findwork.dev/api/jobs/?search=javascript";
