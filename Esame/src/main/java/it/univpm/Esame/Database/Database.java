@@ -83,6 +83,7 @@ public class Database {
 			}
 			fileR.close();
 		}catch(IOException e) {
+			e.getStackTrace();
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"File non trovato.");
 		}
 		return token;
