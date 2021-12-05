@@ -1,7 +1,6 @@
 package it.univpm.Esame.Statistics;
 
 import java.io.IOException;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -9,7 +8,7 @@ import java.util.Set;
 import org.springframework.stereotype.Service;
 
 import it.univpm.Esame.Model.Lavoro;
-import it.univpm.Esame.Model.RequestBody;
+import it.univpm.Esame.Model.BodyClass;
 
 import it.univpm.Esame.Model.StatResult;
 import it.univpm.Esame.Service.JsonParser;
@@ -18,7 +17,7 @@ import it.univpm.Esame.Service.JsonParser;
 @Service
 public class Statistics {
 	
-	public StatResult Statistic(RequestBody body) throws IOException {
+	public StatResult Statistic(BodyClass body) throws IOException {
 		
 		StatResult risultati = new StatResult();  //valore di ritorno con le statistiche
 		JsonParser download = new JsonParser();  

@@ -3,13 +3,13 @@ package it.univpm.Esame.Model;
 //classe per request sui filtri
 //ci metto solo i campi che ci servono per i filtri
 
-public class RequestBody {
+public class BodyClass {
 	private String location;  //filtro su città
 	private Boolean remoto;  //filtro su lavori in remoto
 	private String orario;	//filtro per part-time full-time
 	private String ruolo; //filtro sui ruoli
 	
-	public RequestBody(String location, Boolean remoto, String orario, String ruolo) {
+	public BodyClass(String location, Boolean remoto, String orario, String ruolo) {
 		super();
 		this.location = location;
 		this.remoto = remoto;

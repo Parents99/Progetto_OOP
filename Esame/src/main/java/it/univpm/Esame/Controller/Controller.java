@@ -16,7 +16,7 @@ import it.univpm.Esame.Filters.Filters;
 import it.univpm.Esame.Model.TipsClass;
 import it.univpm.Esame.Service.JsonParser;
 import it.univpm.Esame.Statistics.Statistics;
-
+import it.univpm.Esame.Model.BodyClass;
 
 
 
@@ -45,12 +45,12 @@ public class Controller {
 	}
 	
 	@PostMapping(value="/filters")
-	public ResponseEntity<Object> ShowFilters(@RequestBody it.univpm.Esame.Model.RequestBody body) throws IOException{
+	public ResponseEntity<Object> ShowFilters(@RequestBody BodyClass body) throws IOException{
 		return new ResponseEntity<>(filters.Filter(body),HttpStatus.OK);
 	}
 	
 	@PostMapping(value="/statistics")
-	public ResponseEntity<Object> ShowStatistics(@RequestBody it.univpm.Esame.Model.RequestBody body) throws IOException{
+	public ResponseEntity<Object> ShowStatistics(@RequestBody BodyClass body) throws IOException{
 		return new ResponseEntity<>(stat.Statistic(body),HttpStatus.OK);
 	}
 	
