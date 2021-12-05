@@ -26,7 +26,7 @@ public class Statistics {
 		ArrayList<String> tmp = new ArrayList<String>(); // arraylist di keyword
 		int j=0;
 		
-		if(body.getLocation() !="" && body.getLocation()!=null) {	
+		if(body.getLocation() !="" && body.getLocation()!=null) {	//verifico che sia stata inserita la città
 			for(int i=0;i<annunci.size();i++) { //manca i top 5 dei lavori richiesti
 				if(body.getLocation().contains(annunci.get(i).getLuogo())){
 					if(annunci.get(i).getOrario().equalsIgnoreCase("full time"))
@@ -35,12 +35,14 @@ public class Statistics {
 						risultati.setNumPartime();  
 					if(annunci.get(i).getOrario().equalsIgnoreCase("contract"))
 						risultati.setNumContract();
+					if(annunci.get(i).isRemoto())
+						risultati.setNumRemoto();
 					if(annunci.get(i).getOrario().equals("null")) //annunci senza orari, per contare numLocalità
 						j++;
 					tmp.addAll(annunci.get(i).getKeyword()); //concateno tutti i keyword di ogni annuncio in un unico arraylist
 				}
 			}
-		}else {
+		}else { //se non è stata inserita una città faccio le statistiche  sul totale degli annunci
 			for(int i=0;i<annunci.size();i++) { //manca i top 5 dei lavori richiesti
 					if(annunci.get(i).getOrario().equalsIgnoreCase("full time"))
 						risultati.setNumFulltime(); //metodi set che incrementano solamente
@@ -48,6 +50,8 @@ public class Statistics {
 						risultati.setNumPartime();  
 					if(annunci.get(i).getOrario().equalsIgnoreCase("contract"))
 						risultati.setNumContract();
+					if(annunci.get(i).isRemoto())
+						risultati.setNumRemoto();
 					if(annunci.get(i).getOrario().equals("null")) //annunci senza orari, per contare numLocalità
 						j++;
 					tmp.addAll(annunci.get(i).getKeyword()); //concateno tutti i keyword di ogni annuncio in un unico arraylist
@@ -58,11 +62,10 @@ public class Statistics {
 			tmp.clear();  //cancello gli elementi dell'arraylist
 			tmp.addAll(set);  //e ci rimetto l'hashset privo di duplicati
 		
-			//calcolo percentuale full time
 			risultati.setNumTotLocation(risultati.getNumFulltime()+risultati.getNumPartime()+risultati.getNumContract()+j);
 		
 			double percentuale1 = (risultati.getNumFulltime()/ (double) risultati.getNumTotLocation())*100;
-			risultati.setFulltimePerc(String.format("%.01f", percentuale1)+"%");
+			risultati.setFulltimePerc(String.format("%.01f", percentuale1)+"%"); //"%.01f" per mettere solo una cifra decimale
 		
 			//calcolo percentuale part time
 			double percentuale2=(risultati.getNumPartime()/ (double) risultati.getNumTotLocation())*100;
@@ -71,6 +74,8 @@ public class Statistics {
 			double percentuale3 = (risultati.getNumContract()/ (double) risultati.getNumTotLocation())*100;
 			risultati.setContractPerc(String.format("%.01f", percentuale3)+"%");
 			
+			double percentuale4 = (risultati.getNumRemoto()/ (double) risultati.getNumTotLocation())*100;
+			risultati.setRemotoPercentuale(String.format("%.01f", percentuale4)+"%");
 			
 			risultati.setLan(tmp);
 		

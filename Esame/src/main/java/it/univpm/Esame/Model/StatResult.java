@@ -10,10 +10,13 @@ public class StatResult {
 	private String partimePercentuale; //percentuale di lavori
 	private int numPartime;  //numero di lavori part time
 	private String contractPercentuale; //percentuale di lavori a contratto
-	private int numContract;
+	private int numContract; //numero di lavori a contratto
+	private int numRemoto;//numero di lavori da remoto
+	private String remotoPercentuale; //percentuale di lavori da remoto
 	private ArrayList<String> linguaggi;	 //linguaggi richiesti insieme al javascript
 	private String bestJob;  // ruoli più richiesti
-	
+
+
 	public StatResult() {
 		this.numTotale=0;
 		this.numTotLocation=0;
@@ -27,6 +30,24 @@ public class StatResult {
 		this.bestJob="";
 	} 
 	
+	public int getNumRemoto() {
+		return numRemoto;
+	}
+	
+	public void setNumRemoto() {
+		this.numRemoto++;
+	}
+
+
+	public String getRemotoPercentuale() {
+		return remotoPercentuale;
+	}
+
+
+	public void setRemotoPercentuale(String remotoPercentuale) {
+		this.remotoPercentuale = remotoPercentuale;
+	}
+
 	
 	public String getContractPerc() {
 		return contractPercentuale;
