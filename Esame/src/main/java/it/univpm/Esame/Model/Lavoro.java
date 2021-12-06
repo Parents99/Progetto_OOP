@@ -28,6 +28,24 @@ public class Lavoro {
 	}
 	
 	
+	
+	
+	public Lavoro(int id, String ruolo, String azienda, String luogo, boolean remoto, String orario,
+			ArrayList<String> keyword, String data) {
+		super();
+		this.id = id;
+		this.ruolo = ruolo;
+		this.azienda = azienda;
+		this.luogo = luogo;
+		this.remoto = remoto;
+		this.orario = orario;
+		this.keyword = keyword;
+		this.data = data;
+	}
+
+
+
+
 	public String getData() {
 		return data;
 	}

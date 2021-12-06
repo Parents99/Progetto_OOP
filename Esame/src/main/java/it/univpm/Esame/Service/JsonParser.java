@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.boot.autoconfigure.amqp.RabbitProperties.Template;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -19,7 +19,7 @@ import it.univpm.Esame.Model.Lavoro;
 @Service
 public class JsonParser {
 	
-	public  ArrayList<Lavoro> Parsing() throws IOException{
+	public  ArrayList<Lavoro> Parsing() throws IOException,JSONException{
 	
 		JSONObject parser=Database.JSONDownloader();
 		JSONArray data= parser.getJSONArray("results");

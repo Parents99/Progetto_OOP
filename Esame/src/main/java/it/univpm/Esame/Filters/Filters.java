@@ -9,15 +9,13 @@ import org.springframework.stereotype.Service;
 
 import it.univpm.Esame.Exception.BodyException;
 import it.univpm.Esame.Model.Lavoro;
-import it.univpm.Esame.Model.RequestBody;
+import it.univpm.Esame.Model.BodyClass;
 import it.univpm.Esame.Service.JsonParser;
-
 
 @Service
 public class Filters {
 	
-	
-	public ArrayList<Lavoro> Filter(RequestBody body) throws IOException {
+	public ArrayList<Lavoro> Filter(BodyClass body) throws IOException, BodyException {
 		BodyException e = new BodyException();
 		JsonParser downloader = new JsonParser();
 		ArrayList<Lavoro> annunci = downloader.Parsing();
