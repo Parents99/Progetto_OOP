@@ -40,7 +40,6 @@ class LavoroTest {
 		assertEquals(l.getAzienda(), "Apple");
 		assertEquals(l.getLuogo(), "Cupertino");
 		assertEquals(l.isRemoto(), false);
-		System.out.println(l.getData());
 		assertEquals(l.getData(), "2021-12-6");
 		assertEquals(l.getKeyword(), p);
 		assertEquals(l.getOrario(), "full time");
