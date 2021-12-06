@@ -7,33 +7,17 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-
-
-
 import org.json.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
 
-
-
-
 //'Authorization: Token 595f621a2851ad012fa8909a1fb1c9dee278cfaa'
 public class Database {
 	
-	
-	
 	public static JSONObject JSONDownloader() throws IOException {
-		 Database base=new Database();
-		//String url = "https://findwork.dev/api/jobs/ --silent --header 'Authorization: Token 595f621a2851ad012fa8909a1fb1c9dee278cfaa'";
-		//String apikey="595f621a2851ad012fa8909a1fb1c9dee278cfaa";
-		//String urlString="https://findwork.dev/api/jobs/?search=javascript";
+		Database base=new Database();
 		String token = new String(base.ReadToken());
-		
-		
-		
-		
-		
 		
 		String data = "";
 		String line = "";
@@ -64,10 +48,9 @@ public class Database {
 		
 		JSONObject json = new JSONObject(data);
 		
-		
-		
 		return json;
 	}
+	
 	
 	private String ReadToken() {
 		String token;

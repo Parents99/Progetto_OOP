@@ -20,8 +20,6 @@ import it.univpm.Esame.Model.BodyClass;
 
 
 
-
-
 @RestController
 public class Controller {
 	

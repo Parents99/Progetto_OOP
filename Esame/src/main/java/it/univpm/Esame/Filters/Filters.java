@@ -12,12 +12,10 @@ import it.univpm.Esame.Model.Lavoro;
 import it.univpm.Esame.Model.BodyClass;
 import it.univpm.Esame.Service.JsonParser;
 
-
 @Service
 public class Filters {
 	
-	
-	public ArrayList<Lavoro> Filter(BodyClass body) throws IOException {
+	public ArrayList<Lavoro> Filter(BodyClass body) throws IOException, BodyException {
 		BodyException e = new BodyException();
 		JsonParser downloader = new JsonParser();
 		ArrayList<Lavoro> annunci = downloader.Parsing();
