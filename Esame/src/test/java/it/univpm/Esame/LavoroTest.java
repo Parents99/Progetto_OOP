@@ -24,7 +24,7 @@ class LavoroTest {
 		p.add("ios");
 		p.add("javascript");
 		p.add("swift");
-		l=new Lavoro(1234,"Software","Apple","Cupertino",false,"2021-12-6",p,"full time");
+		l=new Lavoro(1234,"Software","Apple","Cupertino",false,"full time",p,"2021-12-6");
 	}
 	
 	@AfterEach
@@ -40,6 +40,7 @@ class LavoroTest {
 		assertEquals(l.getAzienda(), "Apple");
 		assertEquals(l.getLuogo(), "Cupertino");
 		assertEquals(l.isRemoto(), false);
+		System.out.println(l.getData());
 		assertEquals(l.getData(), "2021-12-6");
 		assertEquals(l.getKeyword(), p);
 		assertEquals(l.getOrario(), "full time");

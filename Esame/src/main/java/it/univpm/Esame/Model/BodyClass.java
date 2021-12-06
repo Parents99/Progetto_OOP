@@ -13,7 +13,6 @@ public class BodyClass {
 	
 
 	public BodyClass(String location, Boolean remoto, String orario, String ruolo, String data) {
-		super();
 		this.location = location;
 		this.remoto = remoto;
 		this.orario = orario;
