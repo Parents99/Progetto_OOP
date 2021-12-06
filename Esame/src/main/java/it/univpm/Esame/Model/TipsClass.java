@@ -6,27 +6,27 @@ import org.springframework.stereotype.Service;
 public class TipsClass {
 	
 	private String titolo;
-	private String città;
+	private String citta;
 	
 	public TipsClass() {
 		this.setTitolo("Città americane suggerite :");
-		this.setCittà("Plano, Seattle, Brooklyn Park, Palo Alto, Philadelphia");
+		this.setCitta("Plano, Seattle, Brooklyn Park, Palo Alto, Philadelphia");
 	}
 
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;
 	}
 
-	public void setCittà(String città) {
-		this.città = città;
+	public void setCitta(String citta) {
+		this.citta = citta;
 	}
 	
 	public String getTitolo() {
 		return this.titolo;
 	}
 	
-	public String getCittà() {
-		return this.città;
+	public String getCitta() {
+		return this.citta;
 	}
 	
 	

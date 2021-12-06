@@ -22,7 +22,7 @@ public class Statistics {
 		StatResult risultati = new StatResult();  //valore di ritorno con le statistiche
 		JsonParser download = new JsonParser();  
 		ArrayList<Lavoro> annunci = download.Parsing();  // scarico il json
-		risultati.setNumTot(annunci.size());  //num totale di annunci (per le percentuali)
+		risultati.setNumTotale(annunci.size());  //num totale di annunci (per le percentuali)
 		ArrayList<String> tmp = new ArrayList<String>(); // arraylist di keyword
 		int j=0;
 		
@@ -65,23 +65,19 @@ public class Statistics {
 			risultati.setNumTotLocation(risultati.getNumFulltime()+risultati.getNumPartime()+risultati.getNumContract()+j);
 		
 			double percentuale1 = (risultati.getNumFulltime()/ (double) risultati.getNumTotLocation())*100;
-			risultati.setFulltimePerc(String.format("%.01f", percentuale1)+"%"); //"%.01f" per mettere solo una cifra decimale
+			risultati.setFulltimePercentuale(String.format("%.01f", percentuale1)+"%"); //"%.01f" per mettere solo una cifra decimale
 		
 			//calcolo percentuale part time
 			double percentuale2=(risultati.getNumPartime()/ (double) risultati.getNumTotLocation())*100;
-			risultati.setPartimePerc(String.format("%.01f", percentuale2)+"%");
+			risultati.setPartimePercentuale(String.format("%.01f", percentuale2)+"%");
 		
 			double percentuale3 = (risultati.getNumContract()/ (double) risultati.getNumTotLocation())*100;
-			risultati.setContractPerc(String.format("%.01f", percentuale3)+"%");
+			risultati.setContractPercentuale(String.format("%.01f", percentuale3)+"%");
 			
 			double percentuale4 = (risultati.getNumRemoto()/ (double) risultati.getNumTotLocation())*100;
 			risultati.setRemotoPercentuale(String.format("%.01f", percentuale4)+"%");
 			
-			risultati.setLan(tmp);
-		
-		
-		
-		
+			risultati.setLinguaggi(tmp);
 		
 		return risultati;
 	}

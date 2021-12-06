@@ -13,8 +13,8 @@ public class StatResult {
 	private int numContract; //numero di lavori a contratto
 	private int numRemoto;//numero di lavori da remoto
 	private String remotoPercentuale; //percentuale di lavori da remoto
-	private ArrayList<String> linguaggi;	 //linguaggi richiesti insieme al javascript
 	private String bestJob;  // ruoli più richiesti
+	private ArrayList<String> linguaggi;	 //linguaggi richiesti insieme al javascript
 
 
 	public StatResult() {
@@ -26,35 +26,77 @@ public class StatResult {
 		this.numPartime=0;
 		this.contractPercentuale="";
 		this.numContract = 0;
-		this.linguaggi=new ArrayList<String>();
 		this.bestJob="";
-	} 
-	
-	public int getNumRemoto() {
-		return numRemoto;
-	}
-	
-	public void setNumRemoto() {
-		this.numRemoto++;
+		this.linguaggi=new ArrayList<String>();
 	}
 
 
-	public String getRemotoPercentuale() {
-		return remotoPercentuale;
+	public int getNumTotale() {
+		return numTotale;
 	}
 
 
-	public void setRemotoPercentuale(String remotoPercentuale) {
-		this.remotoPercentuale = remotoPercentuale;
+	public void setNumTotale(int numTotale) {
+		this.numTotale = numTotale;
 	}
 
-	
-	public String getContractPerc() {
+
+	public int getNumTotLocation() {
+		return numTotLocation;
+	}
+
+
+	public void setNumTotLocation(int numTotLocation) {
+		this.numTotLocation = numTotLocation;
+	}
+
+
+	public String getFulltimePercentuale() {
+		return fulltimePercentuale;
+	}
+
+
+	public void setFulltimePercentuale(String fulltimePercentuale) {
+		this.fulltimePercentuale = fulltimePercentuale;
+	}
+
+
+	public int getNumFulltime() {
+		return numFulltime;
+	}
+
+
+	public void setNumFulltime() {
+		this.numFulltime++;
+	}
+
+
+	public String getPartimePercentuale() {
+		return partimePercentuale;
+	}
+
+
+	public void setPartimePercentuale(String partimePercentuale) {
+		this.partimePercentuale = partimePercentuale;
+	}
+
+
+	public int getNumPartime() {
+		return numPartime;
+	}
+
+
+	public void setNumPartime() {
+		this.numPartime++;
+	}
+
+
+	public String getContractPercentuale() {
 		return contractPercentuale;
 	}
 
 
-	public void setContractPerc(String contractPercentuale) {
+	public void setContractPercentuale(String contractPercentuale) {
 		this.contractPercentuale = contractPercentuale;
 	}
 
@@ -69,70 +111,43 @@ public class StatResult {
 	}
 
 
-	public int getNumTotLocation() {
-		return numTotLocation;
+	public int getNumRemoto() {
+		return numRemoto;
 	}
 
 
-	public void setNumTotLocation(int numTotLocation) {
-		this.numTotLocation = numTotLocation;
+	public void setNumRemoto() {
+		this.numRemoto++;
 	}
 
 
-	public void setNumTot(int numTotale) {
-		this.numTotale = numTotale;
+	public String getRemotoPercentuale() {
+		return remotoPercentuale;
 	}
-		
-	public int getNumTot() {
-		return this.numTotale;
+
+
+	public void setRemotoPercentuale(String remotoPercentuale) {
+		this.remotoPercentuale = remotoPercentuale;
 	}
-	
-	public ArrayList<String> getLan() {
-		return this.linguaggi;
-	}
-	
-	public void setLan(ArrayList<String> linguaggi) {
-		this.linguaggi.addAll(linguaggi);
-	}
-	
+
 	public String getBestJob() {
-		return this.bestJob;
+		return bestJob;
 	}
-	
+
+
 	public void setBestJob(String bestJob) {
 		this.bestJob = bestJob;
 	}
-	
-	public String getFulltimePerc() {
-		return this.fulltimePercentuale;
+
+	public ArrayList<String> getLinguaggi() {
+		return linguaggi;
 	}
-	
-	public void setFulltimePerc(String fulltimePercentuale) {
-		this.fulltimePercentuale = fulltimePercentuale;
+
+
+	public void setLinguaggi(ArrayList<String> linguaggi) {
+		this.linguaggi = linguaggi;
 	}
-	
-	public int getNumFulltime() {
-		return this.numFulltime;
-	}
-	
-	public void setNumFulltime() {
-		this.numFulltime++;
-	}
-	
-	public String getPartimePerc() {
-		return this.partimePercentuale;
-	}
-	
-	public void setPartimePerc(String partimePercentuale) {
-		this.partimePercentuale = partimePercentuale;
-	}
-	
-	public int getNumPartime() {
-		return this.numPartime;
-	}
-	
-	public void setNumPartime() {
-		this.numPartime++;
-	}
-	
+
 }
+	
+	

@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"it.univpm.Esame.Filters"}]
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"it.univpm.Esame.Controller"},{"l":"it.univpm.Esame.Database"},{"l":"it.univpm.Esame.Exception"},{"l":"it.univpm.Esame.Filters"},{"l":"it.univpm.Esame.Model"},{"l":"it.univpm.Esame.Service"},{"l":"it.univpm.Esame.Statistics"}]

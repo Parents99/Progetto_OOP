@@ -35,7 +35,6 @@ public class Database {
 		
 		String url = "https://findwork.dev/api/jobs/?search=javascript";
 		URLConnection http = new URL(url).openConnection();
-		//http.addRequestProperty("Authorization", "Token 595f621a2851ad012fa8909a1fb1c9dee278cfaa");
 		http.addRequestProperty("Authorization", "Token "+token);
 		http.setRequestProperty("Content-Type", "application/json");
 		http.setRequestProperty("accept", "application/json");
