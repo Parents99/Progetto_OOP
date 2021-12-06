@@ -8,6 +8,7 @@ import java.util.Set;
 import org.springframework.stereotype.Service;
 
 import it.univpm.Esame.Model.Lavoro;
+import it.univpm.Esame.Exception.BodyException;
 import it.univpm.Esame.Model.BodyClass;
 
 import it.univpm.Esame.Model.StatResult;
@@ -17,8 +18,9 @@ import it.univpm.Esame.Service.JsonParser;
 @Service
 public class Statistics {
 	
-	public StatResult Statistic(BodyClass body) throws IOException {
+	public StatResult Statistic(BodyClass body) throws IOException,BodyException {
 		
+		BodyException e= new BodyException();
 		StatResult risultati = new StatResult();  //valore di ritorno con le statistiche
 		JsonParser download = new JsonParser();  
 		ArrayList<Lavoro> annunci = download.Parsing();  // scarico il json
@@ -58,28 +60,32 @@ public class Statistics {
 				}
 			}
 		
-			Set<String> set = new HashSet<String>(tmp);  //lo metto dentro un hashSet che non consente i duplicati
-			tmp.clear();  //cancello gli elementi dell'arraylist
-			tmp.addAll(set);  //e ci rimetto l'hashset privo di duplicati
+		Set<String> set = new HashSet<String>(tmp);  //lo metto dentro un hashSet che non consente i duplicati
+		tmp.clear();  //cancello gli elementi dell'arraylist
+		tmp.addAll(set);  //e ci rimetto l'hashset privo di duplicati
 		
-			risultati.setNumTotLocation(risultati.getNumFulltime()+risultati.getNumPartime()+risultati.getNumContract()+j);
+		risultati.setNumTotLocation(risultati.getNumFulltime()+risultati.getNumPartime()+risultati.getNumContract()+j);
 		
-			double percentuale1 = (risultati.getNumFulltime()/ (double) risultati.getNumTotLocation())*100;
-			risultati.setFulltimePercentuale(String.format("%.01f", percentuale1)+"%"); //"%.01f" per mettere solo una cifra decimale
+		double percentuale1 = (risultati.getNumFulltime()/ (double) risultati.getNumTotLocation())*100;
+		risultati.setFulltimePercentuale(String.format("%.01f", percentuale1)+"%"); //"%.01f" per mettere solo una cifra decimale
 		
-			//calcolo percentuale part time
-			double percentuale2=(risultati.getNumPartime()/ (double) risultati.getNumTotLocation())*100;
-			risultati.setPartimePercentuale(String.format("%.01f", percentuale2)+"%");
+		//calcolo percentuale part time
+		double percentuale2=(risultati.getNumPartime()/ (double) risultati.getNumTotLocation())*100;
+		risultati.setPartimePercentuale(String.format("%.01f", percentuale2)+"%");
 		
-			double percentuale3 = (risultati.getNumContract()/ (double) risultati.getNumTotLocation())*100;
-			risultati.setContractPercentuale(String.format("%.01f", percentuale3)+"%");
+		double percentuale3 = (risultati.getNumContract()/ (double) risultati.getNumTotLocation())*100;
+		risultati.setContractPercentuale(String.format("%.01f", percentuale3)+"%");
 			
-			double percentuale4 = (risultati.getNumRemoto()/ (double) risultati.getNumTotLocation())*100;
-			risultati.setRemotoPercentuale(String.format("%.01f", percentuale4)+"%");
+		double percentuale4 = (risultati.getNumRemoto()/ (double) risultati.getNumTotLocation())*100;
+		risultati.setRemotoPercentuale(String.format("%.01f", percentuale4)+"%");
 			
-			risultati.setLinguaggi(tmp);
+		risultati.setLinguaggi(tmp);
+		
+		if(risultati.getNumTotLocation()==0)
+			e.BodyResults("nessun risultato trovato, location non trovata");
 		
 		return risultati;
+		
 	}
 	
 

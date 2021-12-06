@@ -8,7 +8,6 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-import javax.annotation.processing.FilerException;
 
 
 import org.json.*;
@@ -24,7 +23,7 @@ public class Database {
 	
 	
 	
-	public static JSONObject JSONDownloader() throws IOException, FilerException {
+	public static JSONObject JSONDownloader() throws IOException {
 		 Database base=new Database();
 		//String url = "https://findwork.dev/api/jobs/ --silent --header 'Authorization: Token 595f621a2851ad012fa8909a1fb1c9dee278cfaa'";
 		//String apikey="595f621a2851ad012fa8909a1fb1c9dee278cfaa";
@@ -33,17 +32,20 @@ public class Database {
 		
 		
 		
-		String url = "https://findwork.dev/api/jobs/?search=javascript";
-		URLConnection http = new URL(url).openConnection();
-		http.addRequestProperty("Authorization", "Token "+token);
-		http.setRequestProperty("Content-Type", "application/json");
-		http.setRequestProperty("accept", "application/json");
-		http.setDoOutput(true);
+		
+		
 		
 		String data = "";
 		String line = "";
 		
 		try {
+			String url = "https://findwork.dev/api/jobs/?search=javascript";
+			URLConnection http = new URL(url).openConnection();
+			http.addRequestProperty("Authorization", "Token "+token);
+			http.setRequestProperty("Content-Type", "application/json");
+			http.setRequestProperty("accept", "application/json");
+			http.setDoOutput(true);
+			
 			InputStream in = http.getInputStream();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 			try {
