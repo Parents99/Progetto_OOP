@@ -85,12 +85,12 @@ Fornisce all'utente gli annunci di lavoro filtrati per i vari parametri dall'ute
 
 <b>-Body : <br>{ 
  <br>           "luogo" : "Plano", 
- <br>           "remote" : false, 
+ <br>           "remoto" : false, 
   <br>          "orario" : "full time"
   <br>     } </br>
 </b>
 
-![bodyfilter](https://user-images.githubusercontent.com/67264863/144912481-d0a11d62-3f7e-45d4-b07f-fd2ae7f1e915.png)
+![2bodyFilter](https://user-images.githubusercontent.com/67264863/144915557-4c626288-7c5f-450c-9f32-04218308b82d.png)
 
 In questo caso vengono restituiti all'utente solamente gli annunci in cui :
 <br>
