@@ -56,7 +56,6 @@ class LavoroTest {
 				()->assertEquals(l.getData(), "2021-12-6"),
 				()->assertEquals(l.getKeyword(), p),
 				()->assertEquals(l.getOrario(), "full time"));
-		
 	}
 
 }
