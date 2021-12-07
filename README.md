@@ -24,6 +24,8 @@ I parametri che dovranno essere passati sono:
   <li>"employment_type": (rappresenta il tipo di contratto: part-time o full-time o a contratto)</li>
 
   <li>"role": (indica la mansione del lavoro  es. Software Engineers)</li>
+  
+  <li>"date": (indica la data di pubblicazione dell'annuncio)</li>
 </ul>
 
 <h3>1.</h3>
@@ -73,7 +75,7 @@ Fornisce all'utente ii nome di cinque città americane su cui poter fare success
 </table>
 
 Fornisce all'utente gli annunci di lavoro filtrati per i vari parametri dall'utente.
-<br>I parametri da inserire nel <b>Body</b> sono: "luogo", "remoto", "orario" e "ruolo".
+<br>I parametri da inserire nel <b>Body</b> sono: "luogo", "remoto", "orario", "ruolo" e "data".
 <br>E' possibile inserire anche solo un parametro per filtrare gli annunci.
 <br>Inoltre è possibile inserire più città per richiesta nel parametro luogo.</br>
 
@@ -97,7 +99,7 @@ In questo caso vengono restituiti all'utente solamente gli annunci in cui :
 - il luogo è Plano; 
 - remoto = false;
 - orario è full time;
-- mentre per quanto riguarda il ruolo, non essendo stato specificato, vengono mostrati gli annunci con qualsiasi ruolo. </br>
+- mentre per quanto riguarda il ruolo e la data, non essendo stati specificati, vengono mostrati gli annunci con qualsiasi ruolo e di qualsiasi data. </br>
 
 <b>-Risposta :</b>
 
