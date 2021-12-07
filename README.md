@@ -24,6 +24,8 @@ I parametri che dovranno essere passati sono:
   <li>"employment_type": (rappresenta il tipo di contratto: part-time o full-time o a contratto)</li>
 
   <li>"role": (indica la mansione del lavoro  es. Software Engineers)</li>
+  
+  <li>"date": (indica la data di pubblicazione dell'annuncio)</li>
 </ul>
 
 <h3>1.</h3>
