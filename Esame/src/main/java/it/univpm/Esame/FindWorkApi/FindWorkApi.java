@@ -1,4 +1,4 @@
-package it.univpm.Esame.Database;
+package it.univpm.Esame.FindWorkApi;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,10 +13,10 @@ import org.springframework.web.server.ResponseStatusException;
 
 
 //'Authorization: Token 595f621a2851ad012fa8909a1fb1c9dee278cfaa'
-public class Database {
+public class FindWorkApi {
 	
 	public static JSONObject JSONDownloader() throws IOException {
-		Database base=new Database();
+		FindWorkApi base=new FindWorkApi();
 		String token = new String(base.ReadToken());
 		
 		String data = "";

@@ -13,7 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import it.univpm.Esame.Database.Database;
+import it.univpm.Esame.FindWorkApi.FindWorkApi;
 import it.univpm.Esame.Model.Lavoro;
 
 @Service
@@ -21,7 +21,7 @@ public class JsonParser {
 	
 	public  ArrayList<Lavoro> Parsing() throws IOException,JSONException{
 	
-		JSONObject parser=Database.JSONDownloader();
+		JSONObject parser=FindWorkApi.JSONDownloader();
 		JSONArray data= parser.getJSONArray("results");
 	
 		ArrayList<Lavoro> annunci = new ArrayList<Lavoro>();
