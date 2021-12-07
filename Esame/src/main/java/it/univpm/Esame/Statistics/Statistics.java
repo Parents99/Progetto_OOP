@@ -2,6 +2,7 @@ package it.univpm.Esame.Statistics;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -41,6 +42,7 @@ public class Statistics {
 		risultati.setNumTotale(annunci.size());  //num totale di annunci (per le percentuali)
 		ArrayList<String> tmp = new ArrayList<String>(); // arraylist di keyword
 		int contatore=0; //per contare gli annunci senza orari, =null
+		ArrayList<Integer> conta = new ArrayList<Integer>();
 		
 		if(body.getLocation() !="" && body.getLocation()!=null) {	//verifico che sia stata inserita la città
 			for (Lavoro lavori: annunci) { //manca i top 5 dei lavori richiesti
@@ -92,6 +94,12 @@ public class Statistics {
 			
 		double percentuale4 = (risultati.getNumRemoto()/ (double) risultati.getNumTotLocation())*100;
 		risultati.setRemotoPercentuale(String.format("%.01f", percentuale4)+"%");
+		
+		for (Lavoro lavori : annunci) 
+			conta.add(lavori.getKeyword().size());
+		Collections.sort(conta); 		//dato che devo trovare massimo e minimo riordino e prendo la prima e ultima posizione
+		risultati.setNumMinKeyword(conta.get(0));
+		risultati.setNumMaxKeyword(conta.get(conta.size()-1));
 			
 		risultati.setLinguaggi(tmp);
 		
@@ -101,6 +109,7 @@ public class Statistics {
 		return risultati;
 		
 	}
+	
 	
 
 }

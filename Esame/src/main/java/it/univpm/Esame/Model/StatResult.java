@@ -9,17 +9,19 @@ import java.util.ArrayList;
 	 */
 
 public class StatResult {
-	private int numTotale; //numero totale di annunci
-	private int numTotLocation; //numero totale di annunci in una località
+	private int numTotale; 				//numero totale di annunci
+	private int numTotLocation; 		//numero totale di annunci in una località
 	private String fulltimePercentuale; //percentuale di lavori full time 
-	private int numFulltime; //numero di lavori part time
-	private String partimePercentuale; //percentuale di lavori
-	private int numPartime;  //numero di lavori part time
+	private int numFulltime; 			//numero di lavori part time
+	private String partimePercentuale; 	//percentuale di lavori
+	private int numPartime;  			//numero di lavori part time
 	private String contractPercentuale; //percentuale di lavori a contratto
-	private int numContract; //numero di lavori a contratto
-	private int numRemoto;//numero di lavori da remoto
-	private String remotoPercentuale; //percentuale di lavori da remoto
-	private String bestJob;  // ruoli più richiesti
+	private int numContract; 			//numero di lavori a contratto
+	private int numRemoto;				//numero di lavori da remoto
+	private String remotoPercentuale; 	//percentuale di lavori da remoto
+	private int numMaxKeyword; 			//numero massimo di keyword
+	private int numMinKeyword;			//numero minimo di keyword
+	private String bestJob;  			// ruoli più richiesti
 	private ArrayList<String> linguaggi;	 //linguaggi richiesti insieme al javascript
 
 	/**
@@ -35,13 +37,15 @@ public class StatResult {
 		this.numPartime=0;
 		this.contractPercentuale="";
 		this.numContract = 0;
+		this.numMinKeyword=0;
+		this.numMaxKeyword=0;
 		this.bestJob=null;
 		this.linguaggi=new ArrayList<String>();
 	}
 
 	/**
 	 * Metodi Getter, Setter di numTotale, numTotLocation, fulltimePercentuale, numFulltime, partimePercentuale, numPartime, 
-	 * contractPercentuale, numContract, bestjob, linguaggi
+	 * contractPercentuale, numContract, numMinKeyword,numMaxKeyword, bestjob, linguaggi
 	 */
 	
 	public int getNumTotale() {
@@ -159,6 +163,22 @@ public class StatResult {
 
 	public void setLinguaggi(ArrayList<String> linguaggi) {
 		this.linguaggi = linguaggi;
+	}
+	
+	public int getNumMaxKeyword() {
+		return numMaxKeyword;
+	}
+
+	public void setNumMaxKeyword(int numMaxKeyword) {
+		this.numMaxKeyword = numMaxKeyword;
+	}
+
+	public int getNumMinKeyword() {
+		return numMinKeyword;
+	}
+
+	public void setNumMinKeyword(int numMinKeyword) {
+		this.numMinKeyword = numMinKeyword;
 	}
 
 }

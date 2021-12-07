@@ -110,6 +110,19 @@ public class Filters {
 			}
 		}
 		
+		//filtro data
+		if(body.getData() !=null){
+			if(body.getData() != ""){
+				for(int i=0;i<annunci.size();i++){
+					String appoggio=annunci.get(i).getData().substring(0,10);
+					if(appoggio.equals(body.getData())==false){
+						annunci.remove(i);
+						i--;
+					}
+				}
+			}
+		}
+		
 		if(annunci.size()==0) //se non ho trovato nessun annuncio che soddisfa i filtri
 			e.BodyResults("Nessun risultato trovato"); //richiamo l'eccezione personalizzata
 		
