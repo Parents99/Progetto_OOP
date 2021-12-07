@@ -6,6 +6,12 @@ import java.util.ArrayList;
 
 import org.json.JSONArray;
 
+	/**
+	 * Rappresenta la classe che gestisce tutte le chiamate al server
+	 * @author Garzarella Fiore
+	 * @author Parente Christian
+	 */
+
 public class Lavoro {
 	private int id;
 	private String ruolo;
@@ -16,6 +22,10 @@ public class Lavoro {
 	private ArrayList<String> keyword;
 	private String data; 
 	
+	/**
+	 * Costruttore senza parametri
+	 */
+
 	public Lavoro() {
 		this.id= 0;
 		this.ruolo=null;
@@ -28,7 +38,17 @@ public class Lavoro {
 	}
 	
 	
-	
+	/**
+	 * Costruttore con parametri
+	 * @param id
+	 * @param ruolo
+	 * @param azienda
+	 * @param luogo
+	 * @param remoto
+	 * @param data
+	 * @param orario
+	 * @param keyword
+	 */
 	
 	public Lavoro(int id, String ruolo, String azienda, String luogo, boolean remoto, String orario,
 			ArrayList<String> keyword, String data) {
@@ -44,7 +64,9 @@ public class Lavoro {
 	}
 
 
-
+	/**
+	 * Metodi Getter, Setter di data, id, ruolo, azienda, luogo, remoto, orario, keyword
+	 */
 
 	public String getData() {
 		return data;

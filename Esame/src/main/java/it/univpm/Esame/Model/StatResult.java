@@ -2,6 +2,12 @@ package it.univpm.Esame.Model;
 
 import java.util.ArrayList;
 
+	/**
+	 * Rappresenta la classe per le statistiche degli annunci.
+	 * @author Garzarella Fiore
+	 * @author Parente Christian
+	 */
+
 public class StatResult {
 	private int numTotale; //numero totale di annunci
 	private int numTotLocation; //numero totale di annunci in una località
@@ -16,7 +22,10 @@ public class StatResult {
 	private String bestJob;  // ruoli più richiesti
 	private ArrayList<String> linguaggi;	 //linguaggi richiesti insieme al javascript
 
-
+	/**
+	 * Costruttore senza parametri
+	 */
+	
 	public StatResult() {
 		this.numTotale=0;
 		this.numTotLocation=0;
@@ -30,7 +39,11 @@ public class StatResult {
 		this.linguaggi=new ArrayList<String>();
 	}
 
-
+	/**
+	 * Metodi Getter, Setter di numTotale, numTotLocation, fulltimePercentuale, numFulltime, partimePercentuale, numPartime, 
+	 * contractPercentuale, numContract, bestjob, linguaggi
+	 */
+	
 	public int getNumTotale() {
 		return numTotale;
 	}

@@ -2,16 +2,30 @@ package it.univpm.Esame.Model;
 
 import org.springframework.stereotype.Service;
 
+	/**
+	 * Rappresenta la classe che gestisce la rotta alle cinque città americane 
+	 * @author Garzarella Fiore
+	 * @author Parente Christian
+	 */
+
 @Service
 public class TipsClass {
 	
 	private String titolo;
 	private String citta;
 	
+	/**
+	 * Costruttore senza parametri
+	 */
+	
 	public TipsClass() {
 		this.setTitolo("Città americane suggerite :");
 		this.setCitta("Plano, Seattle, Brooklyn Park, Palo Alto, Philadelphia");
 	}
+
+	/**
+	 * Metodi Getter, Setter di titolo, città
+	 */
 
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;

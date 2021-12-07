@@ -1,6 +1,11 @@
 package it.univpm.Esame.Model;
 
-//classe per request sui filtri
+	/**
+	 * Rappresenta la classe per request sui filtri
+	 * @author Garzarella Fiore
+ 	 * @author Parente Christian
+ 	 */
+
 //ci metto solo i campi che ci servono per i filtri
 
 public class BodyClass {
@@ -10,7 +15,14 @@ public class BodyClass {
 	private String ruolo; //filtro sui ruoli
 	private String data;  //per filtrare su data
 	
-	
+	/**
+	 * Costruttore con parametri
+	 * @param location
+	 * @param remoto
+	 * @param orario
+	 * @param ruolo
+	 * @param data
+	 */
 
 	public BodyClass(String location, Boolean remoto, String orario, String ruolo, String data) {
 		this.location = location;
@@ -20,6 +32,9 @@ public class BodyClass {
 		this.data = data;
 	}
 
+	/**
+	 * Metodi Getter, Setter di data,location,remoto,orario,ruolo
+	 */
 	
 	public String getData() {
 		return data;

@@ -14,9 +14,22 @@ import it.univpm.Esame.Model.BodyClass;
 import it.univpm.Esame.Model.StatResult;
 import it.univpm.Esame.Service.JsonParser;
 
+	/**
+	 * @author Garzarella Fiore
+	 * @author Parente Christian
+	 */
+
 
 @Service
 public class Statistics {
+	
+	/**
+	 * Metodo che visualizza le statistiche sui parametri passati dall'utente.
+	 * @param body
+	 * @return Statistiche sugli annunci
+	 * @throws IOException
+	 * @throws BodyException
+	 */
 	
 	public StatResult Statistic(BodyClass body) throws IOException,BodyException {
 		

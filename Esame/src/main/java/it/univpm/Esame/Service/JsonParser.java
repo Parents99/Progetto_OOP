@@ -16,6 +16,11 @@ import org.springframework.web.server.ResponseStatusException;
 import it.univpm.Esame.FindWorkApi.FindWorkApi;
 import it.univpm.Esame.Model.Lavoro;
 
+	/**
+	 * @author Garzarella Fiore
+	 * @author Parente Christian
+	 */
+
 @Service
 public class JsonParser {
 	

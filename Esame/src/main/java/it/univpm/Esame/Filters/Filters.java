@@ -12,8 +12,22 @@ import it.univpm.Esame.Model.Lavoro;
 import it.univpm.Esame.Model.BodyClass;
 import it.univpm.Esame.Service.JsonParser;
 
+	/**
+	 * Rappresenta la classe di filtraggio degli annunci.
+	 * @author Garzarella Fiore
+	 * @author Parente Christian
+	 */
+
 @Service
 public class Filters {
+	
+	/**
+	 * Metodo che filtra gli annunci in base ai parametri inseriti dall'utente.
+	 * @param body
+	 * @return ArrayList<Lavoro>
+	 * @throws IOException
+	 * @throws BodyException
+	 */
 	
 	public ArrayList<Lavoro> Filter(BodyClass body) throws IOException, BodyException {
 		BodyException e = new BodyException();
