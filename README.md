@@ -139,17 +139,14 @@ Fornisce all'utente le statistiche sugli annunci.
 ![filter](https://user-images.githubusercontent.com/67264863/144683009-61b7558c-4da7-4aa4-934a-95c95f2123a8.png)
 ![statistic](https://user-images.githubusercontent.com/67264863/144683016-f38e23c2-704e-4349-aa55-0e4a4fa218ce.png)
 ![classeModel](https://user-images.githubusercontent.com/67264863/144909660-1e43ca2f-ece0-4a37-88d0-31ce8a05ac17.png)
+![2classeFindWorkApi](https://user-images.githubusercontent.com/67264863/145054347-050acfa7-b9e7-4960-92db-e611aae7eb32.png)
 ![service](https://user-images.githubusercontent.com/67264863/144683099-01c0afb1-78fc-4b23-a0b9-02350a315e3f.png)
-![database](https://user-images.githubusercontent.com/67264863/144683106-4dc470a7-420c-41bf-88b7-7cd760e2e7bd.png)
 
 <ul><li>SEQUENZE</li></ul>
 
-![sequenzaLavoro](https://user-images.githubusercontent.com/67264863/144681853-25756916-e45a-4d4f-8636-b57ec1e83a2f.png)
-
-![sequenzaFiltro](https://user-images.githubusercontent.com/67264863/144681845-2d8348de-cad4-4087-a513-778614c42010.png)
-
-![sequenzaStatistics](https://user-images.githubusercontent.com/67264863/144681858-76b0bf77-8bdd-4b3f-adf6-c6fb2cdc93d8.png)
-
+![2sequenzaJob](https://user-images.githubusercontent.com/67264863/145053850-d60f51a1-f227-49c7-82cf-e2368bf4cfdc.png)
+![2sequenzaFiltri](https://user-images.githubusercontent.com/67264863/145053878-0b59f4c0-361d-4ed6-b709-edc379c1dcd1.png)
+![2sequenzaStat](https://user-images.githubusercontent.com/67264863/145053901-4d2653a1-9969-4fba-a019-8a7507047d05.png)
 ![sequenzaCitta2](https://user-images.githubusercontent.com/67264863/144910113-61fcc309-e700-427b-a0a8-815d9426ba37.png)
 
 # Autori
