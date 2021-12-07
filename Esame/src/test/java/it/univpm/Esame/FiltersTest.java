@@ -29,7 +29,7 @@ class FiltersTest {
 	void setUp() throws Exception{
 		filters = new Filters();
 		body = new BodyClass("Plano", false, "", "", "");
-		body2 = new BodyClass("Ancona", false, "", "", "");
+		body2 = new BodyClass("Chieti", false, "", "", "");
 	}
 	
 	@AfterEach
