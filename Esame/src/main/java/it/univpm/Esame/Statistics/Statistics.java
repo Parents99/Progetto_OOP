@@ -1,12 +1,16 @@
 package it.univpm.Esame.Statistics;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import it.univpm.Esame.Model.Lavoro;
 import it.univpm.Esame.Exception.BodyException;
@@ -79,6 +83,7 @@ public class Statistics {
 		Set<String> set = new HashSet<String>(tmp);  //lo metto dentro un hashSet che non consente i duplicati
 		tmp.clear();  //cancello gli elementi dell'arraylist
 		tmp.addAll(set);  //e ci rimetto l'hashset privo di duplicati
+		tmp=filtraKeywords(tmp);
 		
 		risultati.setNumTotLocation(risultati.getNumFulltime()+risultati.getNumPartime()+risultati.getNumContract()+contatore);
 		
@@ -110,6 +115,27 @@ public class Statistics {
 		
 	}
 	
-	
+	private ArrayList<String> filtraKeywords(ArrayList<String> arr){
+		String c;
+		try {
+			BufferedReader file = new BufferedReader(new FileReader("doc/"+"lista_keywords.txt"));
+			 c= file.readLine();
+			if(c==null) 
+				file.close();
+
+			file.close();
+		}catch(IOException e) {
+			e.getStackTrace();
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"File non trovato.");
+		}
+		for(int j=0;j<arr.size();j++){
+			if(c.contains(arr.get(j))==false) {
+				arr.remove(j);
+				j--;
+			}
+		}
+		return arr;
+		
+	}
 
 }

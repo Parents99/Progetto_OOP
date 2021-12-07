@@ -19,6 +19,7 @@ class JsonParserTest {
 	
 	@BeforeEach
 	void setUp() {
+		
 		//data=new String("{"employment_type":"null","date_posted":"2021-12-07T03:14:09Z","role":"Product Engineer","keywords":["qa","sql","javascript","ux"],"comapny_name":"Recyclist","location":"null","id":101094}")
 		json=new JSONObject(data);
 	}

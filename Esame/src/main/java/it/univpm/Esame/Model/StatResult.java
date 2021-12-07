@@ -42,6 +42,10 @@ public class StatResult {
 		this.bestJob=null;
 		this.linguaggi=new ArrayList<String>();
 	}
+	
+	
+
+
 
 	/**
 	 * Metodi Getter, Setter di numTotale, numTotLocation, fulltimePercentuale, numFulltime, partimePercentuale, numPartime, 
