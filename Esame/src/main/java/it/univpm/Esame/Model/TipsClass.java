@@ -3,7 +3,8 @@ package it.univpm.Esame.Model;
 import org.springframework.stereotype.Service;
 
 	/**
-	 * Rappresenta la classe che gestisce la rotta alle cinque città americane 
+	 * Rappresenta la classe che gestisce la rotta delle cinque città americane 
+	 * da suggerire all'utente
 	 * @author Garzarella Fiore
 	 * @author Parente Christian
 	 */

@@ -1,12 +1,13 @@
 package it.univpm.Esame.Model;
 
 	/**
-	 * Rappresenta la classe per request sui filtri
+	 * Rappresenta la classe che utilizziamo per
+	 * effettuare le richieste di tipo POST
 	 * @author Garzarella Fiore
  	 * @author Parente Christian
  	 */
 
-//ci metto solo i campi che ci servono per i filtri
+//ci metto solo i campi che ci servono per i filtri e statistiche
 
 public class BodyClass {
 	private String location;  //filtro su città

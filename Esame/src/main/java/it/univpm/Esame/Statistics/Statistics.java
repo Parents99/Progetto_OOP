@@ -15,6 +15,7 @@ import it.univpm.Esame.Model.StatResult;
 import it.univpm.Esame.Service.JsonParser;
 
 	/**
+	 * classe in cui si effettuano le statistiche 
 	 * @author Garzarella Fiore
 	 * @author Parente Christian
 	 */
@@ -24,14 +25,14 @@ import it.univpm.Esame.Service.JsonParser;
 public class Statistics {
 	
 	/**
-	 * Metodo che visualizza le statistiche sui parametri passati dall'utente.
+	 * Metodo che effettua le statistiche in relazione alla location passata dall'utente.
 	 * @param body
 	 * @return Statistiche sugli annunci
 	 * @throws IOException
 	 * @throws BodyException
 	 */
 	
-	public StatResult Statistic(BodyClass body) throws IOException,BodyException {
+	public StatResult Statistic(BodyClass body) throws IOException,BodyException { // mi passo l'intero body ma utilizzo solo location 
 		
 		BodyException e= new BodyException();
 		StatResult risultati = new StatResult();  //valore di ritorno con le statistiche
@@ -39,37 +40,37 @@ public class Statistics {
 		ArrayList<Lavoro> annunci = download.Parsing();  // scarico il json
 		risultati.setNumTotale(annunci.size());  //num totale di annunci (per le percentuali)
 		ArrayList<String> tmp = new ArrayList<String>(); // arraylist di keyword
-		int j=0;
+		int contatore=0; //per contare gli annunci senza orari, =null
 		
 		if(body.getLocation() !="" && body.getLocation()!=null) {	//verifico che sia stata inserita la città
-			for(int i=0;i<annunci.size();i++) { //manca i top 5 dei lavori richiesti
-				if(body.getLocation().contains(annunci.get(i).getLuogo())){
-					if(annunci.get(i).getOrario().equalsIgnoreCase("full time"))
+			for (Lavoro lavori: annunci) { //manca i top 5 dei lavori richiesti
+				if(body.getLocation().contains(lavori.getLuogo())){
+					if(lavori.getOrario().equalsIgnoreCase("full time"))
 						risultati.setNumFulltime(); //metodi set che incrementano solamente
-					if(annunci.get(i).getOrario().equalsIgnoreCase("part time"))
+					if(lavori.getOrario().equalsIgnoreCase("part time"))
 						risultati.setNumPartime();  
-					if(annunci.get(i).getOrario().equalsIgnoreCase("contract"))
+					if(lavori.getOrario().equalsIgnoreCase("contract"))
 						risultati.setNumContract();
-					if(annunci.get(i).isRemoto())
+					if(lavori.isRemoto())
 						risultati.setNumRemoto();
-					if(annunci.get(i).getOrario().equals("null")) //annunci senza orari, per contare numLocalità
-						j++;
-					tmp.addAll(annunci.get(i).getKeyword()); //concateno tutti i keyword di ogni annuncio in un unico arraylist
+					if(lavori.getOrario().equals("null")) //annunci senza orari, per contare numLocalità
+						contatore++;
+					tmp.addAll(lavori.getKeyword()); //concateno tutti i keyword di ogni annuncio in un unico arraylist
 				}
 			}
 		}else { //se non è stata inserita una città faccio le statistiche  sul totale degli annunci
-			for(int i=0;i<annunci.size();i++) { //manca i top 5 dei lavori richiesti
-					if(annunci.get(i).getOrario().equalsIgnoreCase("full time"))
+			for (Lavoro lavori : annunci) { //manca i top 5 dei lavori richiesti
+					if(lavori.getOrario().equalsIgnoreCase("full time"))
 						risultati.setNumFulltime(); //metodi set che incrementano solamente
-					if(annunci.get(i).getOrario().equalsIgnoreCase("part time"))
+					if(lavori.getOrario().equalsIgnoreCase("part time"))
 						risultati.setNumPartime();  
-					if(annunci.get(i).getOrario().equalsIgnoreCase("contract"))
+					if(lavori.getOrario().equalsIgnoreCase("contract"))
 						risultati.setNumContract();
-					if(annunci.get(i).isRemoto())
+					if(lavori.isRemoto())
 						risultati.setNumRemoto();
-					if(annunci.get(i).getOrario().equals("null")) //annunci senza orari, per contare numLocalità
-						j++;
-					tmp.addAll(annunci.get(i).getKeyword()); //concateno tutti i keyword di ogni annuncio in un unico arraylist
+					if(lavori.getOrario().equals("null")) //annunci senza orari, per contare numLocalità
+						contatore++;
+					tmp.addAll(lavori.getKeyword()); //concateno tutti i keyword di ogni annuncio in un unico arraylist
 				}
 			}
 		
@@ -77,7 +78,7 @@ public class Statistics {
 		tmp.clear();  //cancello gli elementi dell'arraylist
 		tmp.addAll(set);  //e ci rimetto l'hashset privo di duplicati
 		
-		risultati.setNumTotLocation(risultati.getNumFulltime()+risultati.getNumPartime()+risultati.getNumContract()+j);
+		risultati.setNumTotLocation(risultati.getNumFulltime()+risultati.getNumPartime()+risultati.getNumContract()+contatore);
 		
 		double percentuale1 = (risultati.getNumFulltime()/ (double) risultati.getNumTotLocation())*100;
 		risultati.setFulltimePercentuale(String.format("%.01f", percentuale1)+"%"); //"%.01f" per mettere solo una cifra decimale

@@ -12,7 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
 	/**
-	 * Rappresenta la classe che effettua il download del JSON
+	 * Rappresenta la classe che effettua la chiamata Api ed il download del JSON
 	 * @author Garzarella Fiore
 	 * @author Parente Christian
 	 */
@@ -20,6 +20,11 @@ import org.springframework.web.server.ResponseStatusException;
 //'Authorization: Token 595f621a2851ad012fa8909a1fb1c9dee278cfaa'
 public class FindWorkApi {
 	
+	/**
+	 * metodo che effettua la chiamata Api e inserisce i dati in un json
+	 * @return
+	 * @throws IOException
+	 */
 	public static JSONObject JSONDownloader() throws IOException {
 		FindWorkApi base=new FindWorkApi();
 		String token = new String(base.ReadToken());
@@ -56,17 +61,21 @@ public class FindWorkApi {
 		return json;
 	}
 	
+	/**
+	 * metodo per la lettura del token da file
+	 * @return
+	 */
 	
 	private String ReadToken() {
 		String token;
 		try {
-			BufferedReader fileR = new BufferedReader(new FileReader("doc/"+"token.txt"));
-			token = fileR.readLine();
+			BufferedReader file = new BufferedReader(new FileReader("doc/"+"token.txt"));
+			token = file.readLine();
 			if(token==null) {
-				fileR.close();
+				file.close();
 				throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Inserire il token nel file.");
 			}
-			fileR.close();
+			file.close();
 		}catch(IOException e) {
 			e.getStackTrace();
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"File non trovato.");

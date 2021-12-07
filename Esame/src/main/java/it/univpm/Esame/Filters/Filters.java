@@ -13,7 +13,8 @@ import it.univpm.Esame.Model.BodyClass;
 import it.univpm.Esame.Service.JsonParser;
 
 	/**
-	 * Rappresenta la classe di filtraggio degli annunci.
+	 * Rappresenta la classe in cui si effettua
+	 * il filtraggio degli annunci.
 	 * @author Garzarella Fiore
 	 * @author Parente Christian
 	 */
@@ -22,7 +23,7 @@ import it.univpm.Esame.Service.JsonParser;
 public class Filters {
 	
 	/**
-	 * Metodo che filtra gli annunci in base ai parametri inseriti dall'utente.
+	 * Metodo che filtra gli annunci in base ai parametri inseriti nel body dall'utente.
 	 * @param body
 	 * @return ArrayList<Lavoro>
 	 * @throws IOException
@@ -43,10 +44,10 @@ public class Filters {
 				for(int j=0;j<locations.length;j++)
 					tmp.add(locations[j]);
 				
-				for(int i=0;i<annunci.size();i++) {
+				for(int i=0;i<annunci.size();i++){
 					flag = false;
 					for(int h=0;h<tmp.size();h++) {
-						if(annunci.get(i).getLuogo().contains(tmp.get(h)) == true) { //condizione sbagliata?
+						if(annunci.get(i).getLuogo().contains(tmp.get(h)) == true) { 
 							flag = true;
 						}
 					}
@@ -57,7 +58,7 @@ public class Filters {
 				}		
 				
 			} else if(body.getLocation() != "") { 
-					for(int i=0;i<annunci.size();i++)
+					for(int i=0;i<annunci.size();i++) 
 						if(annunci.get(i).getLuogo().contains(body.getLocation())==false) {
 							annunci.remove(i);
 							i--;
@@ -91,7 +92,7 @@ public class Filters {
 		//filtro remoto		
 		if (body.getRemoto() != null){
 			if(body.getRemoto() instanceof Boolean == false) //controllo se ha inserito un booleano
-				e.InvalidBody("Remoto è di tipo booleano, inserire true o false");
+				e.InvalidBody("Remoto è di tipo booleano, inserire true o false"); //se non è un booleano richiamo l'eccezione personalizzata
 			if(body.getRemoto() != false) {
 				for(int i=0;i<annunci.size();i++)
 					if(body.getRemoto() != annunci.get(i).isRemoto()) {
@@ -109,8 +110,8 @@ public class Filters {
 			}
 		}
 		
-		if(annunci.size()==0)
-			e.BodyResults("Nessun risultato trovato");
+		if(annunci.size()==0) //se non ho trovato nessun annuncio che soddisfa i filtri
+			e.BodyResults("Nessun risultato trovato"); //richiamo l'eccezione personalizzata
 		
 		return annunci;
 			

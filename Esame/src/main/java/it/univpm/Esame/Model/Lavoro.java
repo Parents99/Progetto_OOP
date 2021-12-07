@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 
 	/**
-	 * Rappresenta la classe che gestisce tutte le chiamate al server
+	 * Classe che implemento i dati riguardante un annuncio
 	 * @author Garzarella Fiore
 	 * @author Parente Christian
 	 */

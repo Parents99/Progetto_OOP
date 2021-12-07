@@ -3,7 +3,7 @@ package it.univpm.Esame.Model;
 import java.util.ArrayList;
 
 	/**
-	 * Rappresenta la classe per le statistiche degli annunci.
+	 * classe che rappresenta i risultati delle statistiche
 	 * @author Garzarella Fiore
 	 * @author Parente Christian
 	 */
@@ -29,13 +29,13 @@ public class StatResult {
 	public StatResult() {
 		this.numTotale=0;
 		this.numTotLocation=0;
-		this.fulltimePercentuale="";
+		this.fulltimePercentuale=null;
 		this.numFulltime=0;
-		this.partimePercentuale="";
+		this.partimePercentuale=null;
 		this.numPartime=0;
 		this.contractPercentuale="";
 		this.numContract = 0;
-		this.bestJob="";
+		this.bestJob=null;
 		this.linguaggi=new ArrayList<String>();
 	}
 

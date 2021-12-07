@@ -17,12 +17,21 @@ import it.univpm.Esame.FindWorkApi.FindWorkApi;
 import it.univpm.Esame.Model.Lavoro;
 
 	/**
+	 * Classe che utilizziamo per la gestione del json, ovvero
+	 * del parsing e del suo salvataggio su file 
 	 * @author Garzarella Fiore
 	 * @author Parente Christian
 	 */
 
 @Service
 public class JsonParser {
+	
+	/**
+	 * Metodo che effettua il parsing del json ottenuto dalla chiamata API
+	 * @return
+	 * @throws IOException
+	 * @throws JSONException
+	 */
 	
 	public  ArrayList<Lavoro> Parsing() throws IOException,JSONException{
 	
@@ -53,6 +62,11 @@ public class JsonParser {
 		
 	} //fine metodo
 	
+	
+	/**
+	 * metodo utilizzato per salvare il json contenente gli annunci su un file
+	 * @param annunci
+	 */
 	public static void Save(ArrayList<Lavoro> annunci) {
 		try {
 			JSONObject obj = new JSONObject();

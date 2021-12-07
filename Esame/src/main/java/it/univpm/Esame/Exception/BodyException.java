@@ -18,10 +18,18 @@ public class BodyException extends Exception{
 		super();
 	}
 	
+	/**
+	 * eccezione da richiamare in caso di body non valido
+	 * @param out
+	 */
 	public void InvalidBody(String out) {
 		throw new ResponseStatusException(HttpStatus.BAD_REQUEST,out);
 	}
 	
+	/**
+	 * eccezione da richiamare in caso filtri o statistiche non producono risultati 
+	 * @param out
+	 */
 	public void BodyResults(String out) {
 		throw new ResponseStatusException(HttpStatus.OK, out);
 	}
