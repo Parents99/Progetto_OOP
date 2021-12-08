@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 public class StatResult {
 	private int numTotale; 				//numero totale di annunci
-	private int numTotLocation; 		//numero totale di annunci in una località
 	private String fulltimePercentuale; //percentuale di lavori full time 
 	private int numFulltime; 			//numero di lavori part time
 	private String partimePercentuale; 	//percentuale di lavori
@@ -30,12 +29,11 @@ public class StatResult {
 	
 	public StatResult() {
 		this.numTotale=0;
-		this.numTotLocation=0;
 		this.fulltimePercentuale=null;
 		this.numFulltime=0;
 		this.partimePercentuale=null;
 		this.numPartime=0;
-		this.contractPercentuale="";
+		this.contractPercentuale=null;
 		this.numContract = 0;
 		this.numMinKeyword=0;
 		this.numMaxKeyword=0;
@@ -60,17 +58,6 @@ public class StatResult {
 	public void setNumTotale(int numTotale) {
 		this.numTotale = numTotale;
 	}
-
-
-	public int getNumTotLocation() {
-		return numTotLocation;
-	}
-
-
-	public void setNumTotLocation(int numTotLocation) {
-		this.numTotLocation = numTotLocation;
-	}
-
 
 	public String getFulltimePercentuale() {
 		return fulltimePercentuale;

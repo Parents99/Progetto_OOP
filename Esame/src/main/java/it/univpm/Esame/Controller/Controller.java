@@ -16,7 +16,6 @@ import it.univpm.Esame.Filters.Filters;
 import it.univpm.Esame.Model.TipsClass;
 import it.univpm.Esame.Service.JsonParser;
 import it.univpm.Esame.Statistics.FiltersStat;
-import it.univpm.Esame.Statistics.Statistics;
 import it.univpm.Esame.Model.BodyClass;
 
  /**
@@ -34,8 +33,6 @@ public class Controller {
 	Filters filters;
 	@Autowired
 	TipsClass tips;
-	@Autowired
-	Statistics stat;
 	@Autowired
 	FiltersStat filstat;
 	
@@ -89,14 +86,7 @@ public class Controller {
 	 * @throws BodyException
 	 */
 	
-	@PostMapping(value="/statistics")
-	public ResponseEntity<Object> ShowStatistics(@RequestBody BodyClass body) throws ParseException,IOException,BodyException{
-		return new ResponseEntity<>(stat.Statistic(body),HttpStatus.OK);
-	}
-	
-	
-	
-	@PostMapping(value="/filters/Stat")
+	@PostMapping(value="/stats")
 	public ResponseEntity<Object> ShowFilStat(@RequestBody BodyClass body) throws ParseException, IOException,BodyException{
 		return new ResponseEntity<>(filstat.Stats(body),HttpStatus.OK);
 	}

@@ -9,6 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import it.univpm.Esame.Exception.BodyException;
@@ -17,15 +18,22 @@ import it.univpm.Esame.Model.BodyClass;
 import it.univpm.Esame.Model.Lavoro;
 import it.univpm.Esame.Model.StatResult;
 
+/**
+ * cLasse che gestisce la generazione delle statistiche in base
+ * ai parametri inseriti
+ * @author Parente Christian
+ *@author Fiore Garzarella
+ */
+
+@Service
 public class FiltersStat {
 	
 	public StatResult Stats(BodyClass body) throws IOException, BodyException {
-		BodyException e= new BodyException();
 		StatResult risultati = new StatResult();
 		Filters f = new Filters();
 		
 		ArrayList<Lavoro> annunci = f.Filter(body); //richiamo i filtri
-		
+		risultati.setNumTotale(annunci.size());
 		int contatore=0;
 		ArrayList<String> tmp=new ArrayList<String>();
 		ArrayList<Integer> conta = new ArrayList<Integer>();
@@ -40,8 +48,6 @@ public class FiltersStat {
 				risultati.setNumContract();
 			if(lavori.isRemoto())
 				risultati.setNumRemoto();
-			if(lavori.getOrario().equals("null")) //annunci senza orari, per contare numLocalità
-				contatore++;
 			tmp.addAll(lavori.getKeyword()); //concateno tutti i keyword di ogni annuncio in un unico arraylist
 		}
 		
@@ -50,19 +56,17 @@ public class FiltersStat {
 		tmp.addAll(set);  //e ci rimetto l'hashset privo di duplicati
 		tmp=filtraKeywords(tmp);
 		
-		risultati.setNumTotLocation(risultati.getNumFulltime()+risultati.getNumPartime()+risultati.getNumContract()+contatore);
-		
-		double percentuale1 = (risultati.getNumFulltime()/ (double) risultati.getNumTotLocation())*100;
+		double percentuale1 = (risultati.getNumFulltime()/ (double) risultati.getNumTotale())*100;
 		risultati.setFulltimePercentuale(String.format("%.01f", percentuale1)+"%"); //"%.01f" per mettere solo una cifra decimale
 		
 		//calcolo percentuale part time
-		double percentuale2=(risultati.getNumPartime()/ (double) risultati.getNumTotLocation())*100;
+		double percentuale2=(risultati.getNumPartime()/ (double) risultati.getNumTotale())*100;
 		risultati.setPartimePercentuale(String.format("%.01f", percentuale2)+"%");
 		
-		double percentuale3 = (risultati.getNumContract()/ (double) risultati.getNumTotLocation())*100;
+		double percentuale3 = (risultati.getNumContract()/ (double) risultati.getNumTotale())*100;
 		risultati.setContractPercentuale(String.format("%.01f", percentuale3)+"%");
 			
-		double percentuale4 = (risultati.getNumRemoto()/ (double) risultati.getNumTotLocation())*100;
+		double percentuale4 = (risultati.getNumRemoto()/ (double) risultati.getNumTotale())*100;
 		risultati.setRemotoPercentuale(String.format("%.01f", percentuale4)+"%");
 		
 		for (Lavoro lavori : annunci) 
@@ -73,12 +77,17 @@ public class FiltersStat {
 			
 		risultati.setLinguaggi(tmp);
 		
-		if(risultati.getNumTotLocation()==0)
-			e.BodyResults("nessun risultato trovato, location non trovata");
 		
 		return risultati;
 		
 	}
+	
+	/**
+	 * Metodo che permette di filtrare le keywords attraverso
+	 * una lista presente sul file lista_keywords
+	 * @param arr
+	 * @return
+	 */
 	
 	private ArrayList<String> filtraKeywords(ArrayList<String> arr){
 		String c;

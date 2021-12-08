@@ -19,11 +19,11 @@ import it.univpm.Esame.Filters.Filters;
 import it.univpm.Esame.Model.BodyClass;
 import it.univpm.Esame.Model.Lavoro;
 import it.univpm.Esame.Model.StatResult;
-import it.univpm.Esame.Statistics.Statistics;
+import it.univpm.Esame.Statistics.FiltersStat;
 
 class StatisticsTest {
 	
-	Statistics stat=null;
+	FiltersStat stat=null;
 	StatResult res=null;
 	StatResult res2=null;
 	StatResult res3=null;
@@ -35,10 +35,9 @@ class StatisticsTest {
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		stat=new Statistics();
+		stat=new FiltersStat();
 		fil=new Filters();
 		body=new BodyClass("Plano", false, null, null, null); //caso in cui c'è la località
-		body2=new BodyClass("",null, null, null, null); // caso in cui NON è specificata la località
 		body3=new BodyClass("Chieti", false, null, null, null); //caso in cui non viene trovata (per test eccezioni)
 	}
 	
@@ -49,23 +48,16 @@ class StatisticsTest {
 	@Test
 	void test() throws IOException, BodyException {
 		l=fil.Filter(body);
-		res=stat.Statistic(body);
-		assertEquals(res.getNumTotLocation(),l.size());
+		res=stat.Stats(body);
+		assertEquals(res.getNumTotale(),l.size()); 
 		}
 	
 	
 	@Test
-	void test2() throws IOException, BodyException {
-		l=fil.Filter(body2);
-		res2=stat.Statistic(body2);
-		assertEquals(res2.getNumTotLocation(),l.size());	
-	}
-	
-	@Test
 	void test3_eccezioni() {
 		ResponseStatusException e;
-		e = assertThrows(ResponseStatusException.class, ()->{res3=stat.Statistic(body3);});
-		assertTrue(e.getMessage().contains("nessun risultato trovato, location non trovata"));
+		e = assertThrows(ResponseStatusException.class, ()->{res3=stat.Stats(body3);});
+		assertTrue(e.getMessage().contains("Nessun risultato trovato"));
 	}
 	
 	
