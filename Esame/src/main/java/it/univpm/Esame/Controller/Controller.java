@@ -15,6 +15,7 @@ import it.univpm.Esame.Exception.BodyException;
 import it.univpm.Esame.Filters.Filters;
 import it.univpm.Esame.Model.TipsClass;
 import it.univpm.Esame.Service.JsonParser;
+import it.univpm.Esame.Statistics.FiltersStat;
 import it.univpm.Esame.Statistics.Statistics;
 import it.univpm.Esame.Model.BodyClass;
 
@@ -35,6 +36,8 @@ public class Controller {
 	TipsClass tips;
 	@Autowired
 	Statistics stat;
+	@Autowired
+	FiltersStat filstat;
 	
 	/**
 	 * Rotta di tipo GET che restituisce tutti gli annunci di lavoro.	 
@@ -90,5 +93,15 @@ public class Controller {
 	public ResponseEntity<Object> ShowStatistics(@RequestBody BodyClass body) throws ParseException,IOException,BodyException{
 		return new ResponseEntity<>(stat.Statistic(body),HttpStatus.OK);
 	}
+	
+	
+	
+	@PostMapping(value="/filters/Stat")
+	public ResponseEntity<Object> ShowFilStat(@RequestBody BodyClass body) throws ParseException, IOException,BodyException{
+		return new ResponseEntity<>(filstat.Stats(body),HttpStatus.OK);
+	}
+	
+	
+	
 	
 }
