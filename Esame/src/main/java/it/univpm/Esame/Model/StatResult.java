@@ -20,7 +20,7 @@ public class StatResult {
 	private String remotoPercentuale; 	//percentuale di lavori da remoto
 	private int numMaxKeyword; 			//numero massimo di keyword
 	private int numMinKeyword;			//numero minimo di keyword
-	private String bestJob;  			// ruoli più richiesti
+	private ArrayList<String> bestJob;  			// ruoli più richiesti
 	private ArrayList<String> linguaggi;	 //linguaggi richiesti insieme al javascript
 
 	/**
@@ -37,7 +37,7 @@ public class StatResult {
 		this.numContract = 0;
 		this.numMinKeyword=0;
 		this.numMaxKeyword=0;
-		this.bestJob=null;
+		this.bestJob=new ArrayList<String>();
 		this.linguaggi=new ArrayList<String>();
 	}
 	
@@ -138,12 +138,12 @@ public class StatResult {
 		this.remotoPercentuale = remotoPercentuale;
 	}
 
-	public String getBestJob() {
+	public ArrayList<String> getBestJob() {
 		return bestJob;
 	}
 
 
-	public void setBestJob(String bestJob) {
+	public void setBestJob(ArrayList<String> bestJob) {
 		this.bestJob = bestJob;
 	}
 

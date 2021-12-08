@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.context.annotation.FullyQualifiedAnnotationBeanNameGenerator;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -34,7 +35,7 @@ public class JsonParser {
 	 */
 	
 	public  ArrayList<Lavoro> Parsing() throws IOException,JSONException{
-	
+		
 		JSONObject parser=FindWorkApi.JSONDownloader();
 		JSONArray data= parser.getJSONArray("results");
 	
@@ -70,7 +71,7 @@ public class JsonParser {
 	public static void Save(ArrayList<Lavoro> annunci) {
 		try {
 			JSONObject obj = new JSONObject();
-			FileWriter fileW = new FileWriter("doc/"+"lista_annunci.txt");
+			FileWriter fileW = new FileWriter("txtdocs/"+"lista_annunci.txt");
 			for (Lavoro lavoro : annunci) {
 				obj.put("id", lavoro.getId());
 				obj.put("comapny_name", lavoro.getAzienda());

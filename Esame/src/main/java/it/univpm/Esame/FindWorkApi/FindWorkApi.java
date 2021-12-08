@@ -58,6 +58,7 @@ public class FindWorkApi {
 		
 		JSONObject json = new JSONObject(data);
 		
+		
 		return json;
 	}
 	
@@ -69,7 +70,7 @@ public class FindWorkApi {
 	private String ReadToken() {
 		String token;
 		try {
-			BufferedReader file = new BufferedReader(new FileReader("doc/"+"token.txt"));
+			BufferedReader file = new BufferedReader(new FileReader("txtdocs/"+"token.txt"));
 			token = file.readLine();
 			if(token==null) {
 				file.close();

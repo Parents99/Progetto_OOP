@@ -78,8 +78,7 @@ public class Controller {
 	}
 	
 	/**
-	 * Rotta di tipo POST che effettua le statistiche degli annunci in base ai parametri passati.
-	 * @param luogo Tipo parametro che dichiara su quale paese vogliono essere fatte le statistiche.
+	 * Rotta di tipo POST che effettua le statistiche degli annunci in base ai parametri forniti.
 	 * @return Ritorna le statistiche sugli annunci.
 	 * @throws ParseException 
 	 * @throws IOException

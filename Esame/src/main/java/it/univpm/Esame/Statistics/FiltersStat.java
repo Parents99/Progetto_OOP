@@ -22,7 +22,7 @@ import it.univpm.Esame.Model.StatResult;
  * cLasse che gestisce la generazione delle statistiche in base
  * ai parametri inseriti
  * @author Parente Christian
- *@author Fiore Garzarella
+ * @author Fiore Garzarella
  */
 
 @Service
@@ -34,9 +34,8 @@ public class FiltersStat {
 		
 		ArrayList<Lavoro> annunci = f.Filter(body); //richiamo i filtri
 		risultati.setNumTotale(annunci.size());
-		int contatore=0;
 		ArrayList<String> tmp=new ArrayList<String>();
-		ArrayList<Integer> conta = new ArrayList<Integer>();
+		ArrayList<Integer> conta = new ArrayList<Integer>(); 
 		
 		
 		for (Lavoro lavori : annunci) { //manca i top 5 dei lavori richiesti
@@ -50,6 +49,8 @@ public class FiltersStat {
 				risultati.setNumRemoto();
 			tmp.addAll(lavori.getKeyword()); //concateno tutti i keyword di ogni annuncio in un unico arraylist
 		}
+		
+		risultati.setBestJob(top5(annunci));
 		
 		Set<String> set = new HashSet<String>(tmp);  //lo metto dentro un hashSet che non consente i duplicati
 		tmp.clear();  //cancello gli elementi dell'arraylist
@@ -92,7 +93,7 @@ public class FiltersStat {
 	private ArrayList<String> filtraKeywords(ArrayList<String> arr){
 		String c;
 		try {
-			BufferedReader file = new BufferedReader(new FileReader("doc/"+"lista_keywords.txt"));
+			BufferedReader file = new BufferedReader(new FileReader("txtdocs/"+"lista_keywords.txt"));
 			 c= file.readLine();
 			if(c==null) 
 				file.close();
@@ -110,7 +111,69 @@ public class FiltersStat {
 		}
 		return arr;
 		
+		}
+
+	/**
+	 * metodo per trovare la top 5 dei ruoli più richiesti
+	 * @param annunci
+	 * @return
+	 */
+	
+	private ArrayList<String> top5(ArrayList<Lavoro> annunci){
+		ArrayList<String> roles=new ArrayList<String>(); 
+		ArrayList<Integer> contator=new ArrayList<Integer>(); //inizializzare di dimensione come roles 
+		String c="";					      
+		
+		try {
+			BufferedReader file = new BufferedReader(new FileReader("txtdocs/"+"lista_ruoli.txt"));
+			while(c != null){
+				c = file.readLine();
+				if(c != null) {
+					roles.add(c);
+					contator.add(0);
+				}
+			}
+			file.close();
+		}catch(IOException e) {
+			e.getStackTrace();
+		}
+
+		for(int i=0;i<annunci.size();i++)
+			for(int j=0;j<roles.size();j++) {
+				if(annunci.get(i).getRuolo().contains(roles.get(j)))
+					contator.set(j,contator.get(j)+1);
+			}
+		while (roles.size()>5) { 
+			int indice=trovaMinimo(contator);
+			System.out.println(indice);
+			contator.remove(indice);
+			roles.remove(indice);
+		}
+		return roles; //rimangono solo i 5 ruoli 
 	}
 
+	/**
+	 * metodo per trovare il minimo in un arraylist di interi
+	 * @param contator
+	 * @return
+	 */
+	private int trovaMinimo(ArrayList<Integer> contator) {
+		int minimo = contator.get(0);
+		int indexMin=0;
+		for(int i=1;i<contator.size();i++){
+			if(minimo > contator.get(i)) {
+				minimo=contator.get(i);
+				indexMin=i;
+			}
+		}
+		return indexMin;
+	}
 
 }
+
+
+
+
+
+
+
