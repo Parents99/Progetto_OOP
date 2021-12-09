@@ -1,5 +1,5 @@
 # FINDWORK - Lavoro Javascript, America, Role  
-<h4>Repository creata per l'appello di dicembre 2021.</h4>
+<h4>Repository creata per l'appello di programazione ad oggetti di dicembre 2021.</h4>
 
 # Applicazione
 
