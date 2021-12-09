@@ -18,15 +18,23 @@ import it.univpm.Esame.Model.BodyClass;
 import it.univpm.Esame.Model.Lavoro;
 import it.univpm.Esame.Model.StatResult;
 
-/**
- * cLasse che gestisce la generazione delle statistiche in base
- * ai parametri inseriti
- * @author Parente Christian
- * @author Fiore Garzarella
- */
+	/**
+	 * CLasse che gestisce la generazione delle statistiche in base
+	 * ai parametri inseriti
+	 * @author Parente Christian
+	 * @author Fiore Garzarella
+	 */
 
 @Service
 public class FiltersStat {
+	
+	/**
+	 * Metodo che effettua le statistiche sugli annunci in base ai parametri forniti nel body dall'utente.
+	 * @param BodyClass
+	 * @return StatResult
+	 * @throws IOException
+	 * @throws BodyException
+	 */
 	
 	public StatResult Stats(BodyClass body) throws IOException, BodyException {
 		StatResult risultati = new StatResult();
@@ -38,7 +46,7 @@ public class FiltersStat {
 		ArrayList<Integer> conta = new ArrayList<Integer>(); 
 		
 		
-		for (Lavoro lavori : annunci) { //manca i top 5 dei lavori richiesti
+		for (Lavoro lavori : annunci) { 
 			if(lavori.getOrario().equalsIgnoreCase("full time"))
 				risultati.setNumFulltime(); //metodi set che incrementano solamente
 			if(lavori.getOrario().equalsIgnoreCase("part time"))
@@ -85,9 +93,9 @@ public class FiltersStat {
 	
 	/**
 	 * Metodo che permette di filtrare le keywords attraverso
-	 * una lista presente sul file lista_keywords
-	 * @param arr
-	 * @return
+	 * la lista presente sul file lista_keywords
+	 * @param ArrayList<String>
+	 * @return ArrayList<String>
 	 */
 	
 	private ArrayList<String> filtraKeywords(ArrayList<String> arr){
@@ -114,9 +122,9 @@ public class FiltersStat {
 		}
 
 	/**
-	 * metodo per trovare la top 5 dei ruoli più richiesti
-	 * @param annunci
-	 * @return
+	 * metodo per trovare la Top 5 dei ruoli più richiesti
+	 * @param ArrayList<Lavoro>
+	 * @return ArrayList<String>
 	 */
 	
 	private ArrayList<String> top5(ArrayList<Lavoro> annunci){
@@ -145,7 +153,6 @@ public class FiltersStat {
 			}
 		while (roles.size()>5) { 
 			int indice=trovaMinimo(contator);
-			System.out.println(indice);
 			contator.remove(indice);
 			roles.remove(indice);
 		}
@@ -153,9 +160,9 @@ public class FiltersStat {
 	}
 
 	/**
-	 * metodo per trovare il minimo in un arraylist di interi
-	 * @param contator
-	 * @return
+	 * metodo per trovare il minimo in un arraylist di interi e ne restituisce l'indice 
+	 * @param ArrayList<Integer>
+	 * @return int
 	 */
 	private int trovaMinimo(ArrayList<Integer> contator) {
 		int minimo = contator.get(0);

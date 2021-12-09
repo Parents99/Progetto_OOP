@@ -20,7 +20,7 @@ public class StatResult {
 	private String remotoPercentuale; 	//percentuale di lavori da remoto
 	private int numMaxKeyword; 			//numero massimo di keyword
 	private int numMinKeyword;			//numero minimo di keyword
-	private ArrayList<String> bestJob;  			// ruoli più richiesti
+	private ArrayList<String> bestJob;  			// Top 5 ruoli richiesti
 	private ArrayList<String> linguaggi;	 //linguaggi richiesti insieme al javascript
 
 	/**

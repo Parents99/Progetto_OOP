@@ -17,12 +17,12 @@ import org.springframework.web.server.ResponseStatusException;
 	 * @author Parente Christian
 	 */
 
-//'Authorization: Token 595f621a2851ad012fa8909a1fb1c9dee278cfaa'
+
 public class FindWorkApi {
 	
 	/**
 	 * metodo che effettua la chiamata Api e inserisce i dati in un json
-	 * @return
+	 * @return JSONObject
 	 * @throws IOException
 	 */
 	public static JSONObject JSONDownloader() throws IOException {
@@ -46,7 +46,6 @@ public class FindWorkApi {
 				
 				   while ( ( line = reader.readLine() ) != null ) {
 					   data += line;
-					   //System.out.println(data);
 				   }  
 				   
 			} finally {
@@ -64,7 +63,7 @@ public class FindWorkApi {
 	
 	/**
 	 * metodo per la lettura del token da file
-	 * @return
+	 * @return String
 	 */
 	
 	private String ReadToken() {

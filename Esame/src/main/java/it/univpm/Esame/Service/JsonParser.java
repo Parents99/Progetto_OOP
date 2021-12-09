@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.context.annotation.FullyQualifiedAnnotationBeanNameGenerator;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -18,7 +17,7 @@ import it.univpm.Esame.FindWorkApi.FindWorkApi;
 import it.univpm.Esame.Model.Lavoro;
 
 	/**
-	 * Classe che utilizziamo per la gestione del json, ovvero
+	 * Classe che utilizziamo per la gestione del JSON, ovvero
 	 * del parsing e del suo salvataggio su file 
 	 * @author Garzarella Fiore
 	 * @author Parente Christian
@@ -28,8 +27,8 @@ import it.univpm.Esame.Model.Lavoro;
 public class JsonParser {
 	
 	/**
-	 * Metodo che effettua il parsing del json ottenuto dalla chiamata API
-	 * @return
+	 * Metodo che effettua il parsing del JSON ottenuto dalla chiamata API
+	 * @return ArrayList<Lavoro>
 	 * @throws IOException
 	 * @throws JSONException
 	 */
@@ -66,7 +65,7 @@ public class JsonParser {
 	
 	/**
 	 * metodo utilizzato per salvare il json contenente gli annunci su un file
-	 * @param annunci
+	 * @param ArrayList<Lavoro>
 	 */
 	public static void Save(ArrayList<Lavoro> annunci) {
 		try {

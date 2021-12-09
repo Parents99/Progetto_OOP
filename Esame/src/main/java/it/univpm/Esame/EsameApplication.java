@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 	/**
-	 * Rappresenta la classe del main dell'applicazione
+	 * Rappresenta la classe che manda in esecuzione l'applicazione
 	 * @author Garzarella Fiore
 	 * @author Parente Christian
 	 */

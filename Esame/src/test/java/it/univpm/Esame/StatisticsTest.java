@@ -6,6 +6,7 @@ package it.univpm.Esame;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -21,6 +22,12 @@ import it.univpm.Esame.Model.Lavoro;
 import it.univpm.Esame.Model.StatResult;
 import it.univpm.Esame.Statistics.FiltersStat;
 
+	/**
+	 * Classe che permette di effettuare i test per la classe FilterStat
+	 * @author Parente Christian
+	 * @author Garzarella Fiore
+	 */
+
 class StatisticsTest {
 	
 	FiltersStat stat=null;
@@ -28,7 +35,6 @@ class StatisticsTest {
 	StatResult res2=null;
 	StatResult res3=null;
 	BodyClass body=null;
-	BodyClass body2=null;
 	BodyClass body3=null;
 	Filters fil=null;
 	ArrayList<Lavoro> l=null;

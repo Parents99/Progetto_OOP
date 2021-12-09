@@ -10,7 +10,7 @@ package it.univpm.Esame.Model;
 //ci metto solo i campi che ci servono per i filtri e statistiche
 
 public class BodyClass {
-	private String location;  //filtro su città
+	private String luogo;  //filtro su città
 	private Boolean remoto;  //filtro su lavori in remoto
 	private String orario;	//filtro per part-time full-time
 	private String ruolo; //filtro sui ruoli
@@ -18,15 +18,15 @@ public class BodyClass {
 	
 	/**
 	 * Costruttore con parametri
-	 * @param location
+	 * @param luogo
 	 * @param remoto
 	 * @param orario
 	 * @param ruolo
 	 * @param data
 	 */
 
-	public BodyClass(String location, Boolean remoto, String orario, String ruolo, String data) {
-		this.location = location;
+	public BodyClass(String luogo, Boolean remoto, String orario, String ruolo, String data) {
+		this.luogo = luogo;
 		this.remoto = remoto;
 		this.orario = orario;
 		this.ruolo = ruolo;
@@ -34,7 +34,7 @@ public class BodyClass {
 	}
 
 	/**
-	 * Metodi Getter, Setter di data,location,remoto,orario,ruolo
+	 * Metodi Getter, Setter di data,luogo,remoto,orario,ruolo
 	 */
 	
 	public String getData() {
@@ -45,12 +45,12 @@ public class BodyClass {
 		this.data = data;
 	}
 	
-	public String getLocation() {
-		return location;
+	public String getLuogo() {
+		return luogo;
 	}
 
-	public void setLocation(String location) {
-		this.location = location;
+	public void setLuogo(String luogo) {
+		this.luogo = luogo;
 	}
 
 	public Boolean getRemoto() {

@@ -17,6 +17,11 @@ import it.univpm.Esame.Filters.Filters;
 import it.univpm.Esame.Model.BodyClass;
 import it.univpm.Esame.Model.Lavoro;
 
+	/**
+	 * Classe che permette di effettuare i test per la classe Filters
+	 * @author Parente Christian
+	 * @author Garzarella Fiore
+ 	*/
 
 class FiltersTest {
 	
@@ -41,7 +46,7 @@ class FiltersTest {
 		lavori = new ArrayList<Lavoro>();
 		lavori = filters.Filter(body);
 		for (Lavoro lavoro : lavori) {
-			assertEquals(lavoro.getLuogo(), body.getLocation());
+			assertEquals(lavoro.getLuogo(), body.getLuogo());
 			assertEquals(lavoro.isRemoto(), body.getRemoto());
 		}
 	}

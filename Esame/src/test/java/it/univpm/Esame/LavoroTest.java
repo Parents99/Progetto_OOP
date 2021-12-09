@@ -12,6 +12,12 @@ import org.junit.jupiter.api.Test;
 
 import it.univpm.Esame.Model.Lavoro;
 
+	/**
+	 * Classe che permette di effettuare i test per la classe Lavoro
+	 * @author Parente Christian
+	 * @author Garzarella Fiore
+	 */
+
 class LavoroTest {
 	private Lavoro l=null;
 	private ArrayList<String> p=null;

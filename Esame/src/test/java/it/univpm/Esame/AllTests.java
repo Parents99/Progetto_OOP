@@ -1,16 +1,14 @@
 package it.univpm.Esame;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.runner.RunWith;
 
 /**
- * classe che permette di effettuare tutti i test contemporaneamente
- * @author Christian
- *
+ * Classe che permette di effettuare tutti i test contemporaneamente
+ * @author Parente Christian
+ * @author Garzarella Fiore
  */
 
 @SuppressWarnings("deprecation")

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 
 	/**
-	 * Classe che implemento i dati riguardante un annuncio
+	 * Classe che implementa i dati riguardante un annuncio
 	 * @author Garzarella Fiore
 	 * @author Parente Christian
 	 */

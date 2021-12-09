@@ -23,8 +23,8 @@ import it.univpm.Esame.Service.JsonParser;
 public class Filters {
 	
 	/**
-	 * Metodo che filtra gli annunci in base ai parametri inseriti nel body dall'utente.
-	 * @param body
+	 * Metodo che filtra gli annunci in base ai parametri forniti nel body dall'utente.
+	 * @param BodyClass
 	 * @return ArrayList<Lavoro>
 	 * @throws IOException
 	 * @throws BodyException
@@ -36,11 +36,11 @@ public class Filters {
 		ArrayList<Lavoro> annunci = downloader.Parsing();
 
 		// filtro location
-		if (body.getLocation() != null) {
-			if(body.getLocation().contains(" ")) { // caso più città nel filtro
+		if (body.getLuogo() != null) {
+			if(body.getLuogo().contains(" ")) { // caso più città nel filtro
 				ArrayList<String> tmp = new ArrayList<String>();
 				boolean flag;
-				String[] locations=body.getLocation().split(" ");
+				String[] locations=body.getLuogo().split(" ");
 				for(int j=0;j<locations.length;j++)
 					tmp.add(locations[j]);
 				
@@ -57,9 +57,9 @@ public class Filters {
 					}
 				}		
 				
-			} else if(body.getLocation() != "") { 
+			} else if(body.getLuogo() != "") { 
 					for(int i=0;i<annunci.size();i++) 
-						if(annunci.get(i).getLuogo().contains(body.getLocation())==false) {
+						if(annunci.get(i).getLuogo().contains(body.getLuogo())==false) {
 							annunci.remove(i);
 							i--;
 						}

@@ -61,7 +61,7 @@ public class Controller {
 	}
 	
 	/**
-	 * Rotta di tipo POST che effettua il filtraggio degli annunci in base ai parametri passati.
+	 * Rotta di tipo POST che effettua il filtraggio degli annunci in base ai parametri forniti.
 	 * @param luogo Tipo parametro che dichiara di quale paese si intende conoscere gli annunci.
 	 * @param remoto Tipo parametro che dichiara se il lavoro è da remoto o non.
 	 * @param orario Tipo parametro che dichiara se il lavoro è full time, part time o contract.

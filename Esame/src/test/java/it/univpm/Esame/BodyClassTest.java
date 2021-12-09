@@ -9,6 +9,12 @@ import org.junit.jupiter.api.Test;
 
 
 import it.univpm.Esame.Model.BodyClass;
+	
+	/**
+	 * Classe che permette di effettuare i test per la classe BodyClass
+	 * @author Parente Christian
+	 * @author Garzarella Fiore
+	 */
 
 class BodyClassTest {
 	private BodyClass body=null;
@@ -26,7 +32,7 @@ class BodyClassTest {
 	
 	@Test
 	void test() {
-		assertEquals(body.getLocation(),"Plano");
+		assertEquals(body.getLuogo(),"Plano");
 		assertEquals(body.getRemoto(),false);
 		assertEquals(body.getOrario(),"full time");
 		assertEquals(body.getRuolo(),"Full stack developer");
@@ -36,7 +42,7 @@ class BodyClassTest {
 	
 	@Test
 	void test2() {
-		assertAll("valori", ()->assertEquals(body.getLocation(),"Plano"),  
+		assertAll("valori", ()->assertEquals(body.getLuogo(),"Plano"),  
 				()->assertEquals(body.getRemoto(),false),
 				()->assertEquals(body.getOrario(),"full time"),
 				()->assertEquals(body.getRuolo(),"Full stack developer"),
