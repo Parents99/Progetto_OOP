@@ -203,6 +203,16 @@ i linguaggi richiesti insieme al JAVASCRIPT.
 
 ![sequenzaCitta2](https://user-images.githubusercontent.com/67264863/144910113-61fcc309-e700-427b-a0a8-815d9426ba37.png)
 
+<h1>Test</h1>
+Nel codice sono presenti anche alcuni Test che vanno a testare le classi, cioè verificano se effettivamente svolgono le loro funzioni. </br>
+Sono state affettuati Test sulle classi : BodyClass, Filters, Lavoro, FilterStat e inoltre una classe aggiuntiva che effettua tutti i test contemporaneamente.
+
+# Note
+
+Tra i file presenti nella repository c'è una cartella "txtdocs" che contiene alcuni file txt tra cui un file contenente il Token necessario per effettuare la chiamata API. </br>
+Il token è gia presente, se si vuole un proprio Token bisogna inserirlo nel file  "token.txt".
+ 
+ 
 # Autori
 
 <table>
