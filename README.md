@@ -29,6 +29,17 @@ I parametri che dovranno essere passati sono:
 </ul>
 <h3> Regole scrittura <b>Body</b>: </h3>
 
+<ul>
+  <li>luogo: l'unica regola per questo parametro c'è nel caso in cui vengono inserite più di una città, ovvero i nomi delle città devono essere separate da uno spazio:
+              es. "Plano Berlin" (attenzione, l'inserimento in questo campo è case-sensitive).</li>
+  <li>remoto: il valore associato a questo campo è di tipo booleano, quindi assume solo due valori, true o false; vanno inseriti nel body senza virgolette.</li>
+  <li>orario: in questo campo può assumere 3 valori: "part time", "full time" e "contract". </li>
+  <li>ruolo: non ci sono regole in merito a questo campo. </li>
+  <li>data: in questo campo la data deve essere fornita nel formato "yyyy-mm-dd" </li>
+</ul>
+<h1><b>nota:</b></h1>
+<p>L'inserimento nei campi è case-sensitive</p>
+
 <h2>1.</h2>
 <table>
   <tr><td>Tipo</td><td>Path</td></tr>
