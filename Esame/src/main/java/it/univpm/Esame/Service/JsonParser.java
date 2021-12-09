@@ -67,7 +67,7 @@ public class JsonParser {
 	 * metodo utilizzato per salvare il json contenente gli annunci su un file
 	 * @param ArrayList<Lavoro>
 	 */
-	public static void Save(ArrayList<Lavoro> annunci) {
+	private static void Save(ArrayList<Lavoro> annunci) {
 		try {
 			JSONObject obj = new JSONObject();
 			FileWriter fileW = new FileWriter("txtdocs/"+"lista_annunci.txt");
