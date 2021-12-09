@@ -78,7 +78,7 @@ Fornisce all'utente ii nome di cinque città americane su cui poter fare success
 
 <h3>Risposta :</h3>
 
-![t1](https://user-images.githubusercontent.com/67264863/144685206-e7b5a841-18cd-4c72-bfaa-1956392f8f35.png)
+![2getTips](https://user-images.githubusercontent.com/67264863/145448323-5e73e771-ab22-47d9-ac60-3990ba393b71.png)
 
 <h2>3. <b>Filtri</b></h2>
 <table>
