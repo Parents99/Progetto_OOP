@@ -21,7 +21,7 @@ public class TipsClass {
 	
 	public TipsClass() {
 		this.setTitolo("Città americane suggerite :");
-		this.setCitta("Plano, Seattle, Brooklyn Park, Palo Alto, Philadelphia");
+		this.setCitta("Plano, Seattle, Boston , Palo Alto, San Francisco");
 	}
 
 	/**
