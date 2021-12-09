@@ -37,8 +37,8 @@ I parametri che dovranno essere passati sono:
   <li>"ruolo": non ci sono regole in merito a questo campo. </li>
   <li>"data": in questo campo la data deve essere fornita nel formato "yyyy-mm-dd" </li>
 </ul>
-<h4><b>nota:</b></h4>
-<p>L'inserimento nei campi è case-sensitive</p>
+<p><b>Nota:</b> L'inserimento nei campi è case-sensitive</p>
+
 
 <h2>1.</h2>
 <table>
