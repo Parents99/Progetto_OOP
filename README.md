@@ -171,11 +171,11 @@ i linguaggi richiesti insieme al JAVASCRIPT.
 
 # UML
 
-<ul><li>CASO D'USO</li></ul>
+<ul><li><h2><b>CASO D'USO</b></h2></li></ul>
 
 ![3casoduso](https://user-images.githubusercontent.com/67264863/145387670-5b4ab41c-5229-4352-a86f-65950f3f5aed.png)
 
-<ul><li>CLASSI</li></ul>
+<ul><li><h2><b>CLASSI</b></h2></li></ul>
 
 ![main](https://user-images.githubusercontent.com/67264863/144682982-731ac431-a9be-4a72-a16d-db4be3a65c5c.png)
 ![3classeJsonParser](https://user-images.githubusercontent.com/67264863/145410846-033bcc64-44d3-42d4-9282-1d3cfe40d54b.png)
@@ -186,11 +186,21 @@ i linguaggi richiesti insieme al JAVASCRIPT.
 ![3classeStat](https://user-images.githubusercontent.com/67264863/145410867-e49caa04-beb0-44e3-a8a2-ee963188dfcf.png)
 ![3classeException](https://user-images.githubusercontent.com/67264863/145411524-5ff1047a-406e-4cf2-9d5c-35852aa12412.png)
 
-<ul><li>SEQUENZE</li></ul>
+<ul><li><h2><b>SEQUENZE</b></h2></li></ul>
+<ul><li><b>Lista annunci</b></li></ul>
 
 ![2sequenzaJob](https://user-images.githubusercontent.com/67264863/145053850-d60f51a1-f227-49c7-82cf-e2368bf4cfdc.png)
+
+<ul><li><b>Filtri</b></li></ul>
+
 ![2sequenzaFiltri](https://user-images.githubusercontent.com/67264863/145053878-0b59f4c0-361d-4ed6-b709-edc379c1dcd1.png)
+
+<ul><li><b>Statistiche</b></li></ul>
+
 ![3sequenzaStat](https://user-images.githubusercontent.com/67264863/145414438-fd558c1b-0888-463b-a49e-d47fdeb7acd9.png)
+
+<ul><li><b>Suggerimenti</b></li></ul>
+
 ![sequenzaCitta2](https://user-images.githubusercontent.com/67264863/144910113-61fcc309-e700-427b-a0a8-815d9426ba37.png)
 
 # Autori
