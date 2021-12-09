@@ -40,7 +40,7 @@ I parametri che dovranno essere passati sono:
 <p><b>Nota:</b> L'inserimento nei campi è case-sensitive</p>
 
 
-<h2>1.</h2>
+<h2>1. <b>Lista annunci</b></h2>
 <table>
   <tr><td>Tipo</td><td>Path</td></tr>
   <tr><td>GET</td><td>localhost:8080/annunci</td></tr>
@@ -61,7 +61,7 @@ Fornisce all'utente tutti gli annunci di lavoro riguardanti il linguaggio Javasc
 ![a1](https://user-images.githubusercontent.com/67264863/144684597-ad22b6f2-6512-4e15-b148-99894a199f43.png)
 ![a3](https://user-images.githubusercontent.com/67264863/144684600-156cbca0-a4f0-4a10-8606-0a149b49c80e.png)
 
-<h2>2.</h2>
+<h2>2. <b>Suggerimenti città</b></h2>
 <table>
   <tr><td>Tipo</td><td>Path</td></tr>
   <tr><td>GET</td><td>localhost:8080/tips</td></tr>
@@ -80,7 +80,7 @@ Fornisce all'utente ii nome di cinque città americane su cui poter fare success
 
 ![t1](https://user-images.githubusercontent.com/67264863/144685206-e7b5a841-18cd-4c72-bfaa-1956392f8f35.png)
 
-<h2>3.</h2>
+<h2>3. <b>Filtri</b></h2>
 <table>
   <tr><td>Tipo</td><td>Path</td></tr>
   <tr><td>POST</td><td>localhost:8080/filters</td></tr>
@@ -122,7 +122,7 @@ In questo caso vengono restituiti all'utente solamente gli annunci in cui :
 - mentre per quanto riguarda il ruolo e la data, non essendo stati specificati, gli annunci vengono filtrati indipendemente da essi. </br>
 
 
-<h2>4.</h2>
+<h2>4. <b>Statistiche</b></h2>
 <table>
   <tr><td>Tipo</td><td>Path</td></tr>
   <tr><td>POST</td><td>localhost:8080/stats</td></tr>
