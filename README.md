@@ -14,7 +14,7 @@ Per facilitare l'utente, l'applicazione suggerisce il nome di 5 città americane
 # Rotte Applicazione
 
 <p>
-Per le chiamate di tipo <b>Post</b> i parametri vengono passati attraverso un <b>Request Body</b>.                       
+Per le chiamate di tipo <b>Post</b> i parametri vengono passati attraverso un <b></b>.                       
 I parametri che dovranno essere passati sono:
 <ul>
   <li>"luogo": (rappresenta il nome della città dove viene offerto il lavoro)</li>
@@ -27,6 +27,7 @@ I parametri che dovranno essere passati sono:
   
  <li>"data": (indica la data di pubblicazione dell'annuncio)</li>
 </ul>
+<h3> Regole scrittura <b>Body</b>: </h3>
 
 <h2>1.</h2>
 <table>
@@ -166,17 +167,19 @@ i linguaggi richiesti insieme al JAVASCRIPT.
 <ul><li>CLASSI</li></ul>
 
 ![main](https://user-images.githubusercontent.com/67264863/144682982-731ac431-a9be-4a72-a16d-db4be3a65c5c.png)
-
-![filter](https://user-images.githubusercontent.com/67264863/144683009-61b7558c-4da7-4aa4-934a-95c95f2123a8.png)
-
+![3classeJsonParser](https://user-images.githubusercontent.com/67264863/145410846-033bcc64-44d3-42d4-9282-1d3cfe40d54b.png)
+![3classeModel](https://user-images.githubusercontent.com/67264863/145410905-a9e0774d-2522-4bfd-998d-daecfdf8e119.png)
 ![2classeFindWorkApi](https://user-images.githubusercontent.com/67264863/145054347-050acfa7-b9e7-4960-92db-e611aae7eb32.png)
-
+![3classeController](https://user-images.githubusercontent.com/67264863/145410914-b724236a-a09c-4155-89f2-efcfce9f9c9b.png)
+![3classeFilter](https://user-images.githubusercontent.com/67264863/145410810-25283768-56ee-467f-8929-49c330eb6a00.png)
+![3classeStat](https://user-images.githubusercontent.com/67264863/145410867-e49caa04-beb0-44e3-a8a2-ee963188dfcf.png)
+![3classeException](https://user-images.githubusercontent.com/67264863/145411524-5ff1047a-406e-4cf2-9d5c-35852aa12412.png)
 
 <ul><li>SEQUENZE</li></ul>
 
 ![2sequenzaJob](https://user-images.githubusercontent.com/67264863/145053850-d60f51a1-f227-49c7-82cf-e2368bf4cfdc.png)
 ![2sequenzaFiltri](https://user-images.githubusercontent.com/67264863/145053878-0b59f4c0-361d-4ed6-b709-edc379c1dcd1.png)
-
+![3sequenzaStat](https://user-images.githubusercontent.com/67264863/145414438-fd558c1b-0888-463b-a49e-d47fdeb7acd9.png)
 ![sequenzaCitta2](https://user-images.githubusercontent.com/67264863/144910113-61fcc309-e700-427b-a0a8-815d9426ba37.png)
 
 # Autori
